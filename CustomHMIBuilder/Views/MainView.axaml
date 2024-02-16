@@ -1,0 +1,62 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:vm="clr-namespace:CustomHMIBuilder.ViewModels"
+             mc:Ignorable="d" d:DesignWidth="1200" d:DesignHeight="720" 
+             x:Class="CustomHMIBuilder.Views.MainView"
+             x:DataType="vm:MainViewModel">
+  <Design.DataContext>
+    <!-- This only sets the DataContext for the previewer in an IDE,
+         to set the actual DataContext for runtime, set the DataContext property in code (look at App.axaml.cs) -->
+    <vm:MainViewModel />
+  </Design.DataContext>
+
+	<!--Это основной Grid-->
+	<Grid Background="OldLace" ColumnDefinitions="Auto,Auto,*,Auto,Auto">
+
+		<!--Кнопка смены положения левого меню-->
+		<Button Grid.Column="0" Background="LightCoral" Click="Button_Click" Height="400" VerticalContentAlignment="Center"/>
+
+		<!--Этот грид отвечает за левую панель списка элементов-->
+		<Grid Grid.Column="1" Name="navPanel" >
+
+			<!--Содержимое левого меню-->
+			<TabControl Grid.Column="1" Background="LightBlue" TabStripPlacement="Top" Width="270" >
+				<TabItem Header="MainMenu" >
+
+				</TabItem>
+				<TabItem Header="Что"   CornerRadius="5">
+
+				</TabItem>
+			</TabControl>
+
+		</Grid>
+		<!--Этот грид отвечает за основную рабочую область пульта-->
+		<Grid Grid.Column="2" Width="600" Height="600" >
+
+			<!--Поле будующего пульта-->
+			<Canvas Name="MainCanvas" Background="LightCoral" >
+
+			</Canvas>
+
+		</Grid>
+		<!--Этот грид отвечает за правую панель свойств-->
+		<Grid Name="PropPanel" Grid.Column="3">
+			
+			<TabControl TabStripPlacement="Top" Width="250" Background="LightBlue">
+				<TabItem Name="Edit" Header="Edit">
+
+				</TabItem>
+				<TabItem Name="Export" Header="Export">
+
+				</TabItem>
+
+			</TabControl>
+		</Grid>
+		<!--Этот грид отвечает за правую панель списка элементов-->
+		<Button Grid.Column="5" Background="LightCoral" Click="Button_Click" Height="400" VerticalContentAlignment="Center"/>
+
+	</Grid>
+	
+</UserControl>
