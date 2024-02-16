@@ -42,11 +42,24 @@
 
 		</Grid>
 		<!--Этот грид отвечает за правую панель свойств-->
-		<Grid Name="PropPanel" Grid.Column="3">
+		<Grid Name="PropPanel" Grid.Column="3" ShowGridLines="True">
 			
 			<TabControl TabStripPlacement="Top" Width="250" Background="LightBlue">
 				<TabItem Name="Edit" Header="Edit">
-
+					<StackPanel >
+						<Label Margin="0 10 0 -27 ">Name -</Label>
+						<TextBox Margin="70 0 0 0" VerticalAlignment="Top"></TextBox>
+						<Label Margin="0 20 0 -27">X - </Label>
+						<TextBox Width="50" Margin="0 0 100 0"></TextBox>
+						<Label Margin="110 -27 0 0">Y -</Label>
+						<TextBox Width="50" Margin="120 -33 0 0"></TextBox>
+						<Label Margin="0 20 0 0">W -</Label>
+						<TextBox Width="50" Margin="0 -26 100 0"></TextBox>
+						<Label Margin="110 -27 0 0">H -</Label>
+						<TextBox Width="50" Margin="0 -32 -120 0"></TextBox>
+						<Label Margin="0 20 0 0">Back Ground -</Label>
+						<TextBox Width="120" Margin="0 -29 -110 0"></TextBox>
+					</StackPanel>
 				</TabItem>
 				<TabItem Name="Export" Header="Export">
 
