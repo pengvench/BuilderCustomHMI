@@ -16,7 +16,7 @@
 	<Grid Background="OldLace" ColumnDefinitions="Auto,Auto,*,Auto,Auto">
 
 		<!--Кнопка смены положения левого меню-->
-		<Button Grid.Column="0" Background="LightCoral" Click="Button_Click" Height="400" VerticalContentAlignment="Center"/>
+		<Button  Grid.Column="0" Background="LightCoral" Height="400" VerticalContentAlignment="Center"/>
 
 		<!--Этот грид отвечает за левую панель списка элементов-->
 		<Grid Grid.Column="1" Name="navPanel" >
@@ -24,7 +24,11 @@
 			<!--Содержимое левого меню-->
 			<TabControl Grid.Column="1" Background="LightBlue" TabStripPlacement="Top" Width="270" >
 				<TabItem Header="MainMenu" >
-
+					<WrapPanel Background="LightGray" Margin="0,10,0,0" >
+							<Button Name="Button"  FontSize="20" Click="Button_Click">Button</Button>
+							<Button Name="Button1" FontSize="20">Button</Button>
+							<Button Name="Button2" FontSize="20">Button</Button>
+					</WrapPanel>
 				</TabItem>
 				<TabItem Header="Что"   CornerRadius="5">
 
@@ -33,33 +37,41 @@
 
 		</Grid>
 		<!--Этот грид отвечает за основную рабочую область пульта-->
-		<Grid Grid.Column="2" Width="600" Height="600" >
+		<Grid Grid.Column="2"  >
 
 			<!--Поле будующего пульта-->
-			<Canvas Name="MainCanvas" Background="LightCoral" >
+			<Canvas Name="MainCanvas" Margin="20" Background="LightCoral" >
 
 			</Canvas>
 
 		</Grid>
 		<!--Этот грид отвечает за правую панель свойств-->
-		<Grid Name="PropPanel" Grid.Column="3" ShowGridLines="True">
+		<Grid Name="PropPanel" Grid.Column="3">
 			
 			<TabControl TabStripPlacement="Top" Width="250" Background="LightBlue">
 				<TabItem Name="Edit" Header="Edit">
-					<StackPanel >
-						<Label Margin="0 10 0 -27 ">Name -</Label>
-						<TextBox Margin="70 0 0 0" VerticalAlignment="Top"></TextBox>
-						<Label Margin="0 20 0 -27">X - </Label>
-						<TextBox Width="50" Margin="0 0 100 0"></TextBox>
-						<Label Margin="110 -27 0 0">Y -</Label>
-						<TextBox Width="50" Margin="120 -33 0 0"></TextBox>
-						<Label Margin="0 20 0 0">W -</Label>
-						<TextBox Width="50" Margin="0 -26 100 0"></TextBox>
-						<Label Margin="110 -27 0 0">H -</Label>
-						<TextBox Width="50" Margin="0 -32 -120 0"></TextBox>
-						<Label Margin="0 20 0 0">Back Ground -</Label>
-						<TextBox Width="120" Margin="0 -29 -110 0"></TextBox>
+					<StackPanel Orientation="Vertical" Background="LightGray" Margin="0,10,0,0">
+						<StackPanel  Orientation="Vertical" >
+							<Label FontSize="20" Content="Name" HorizontalAlignment="Center"/>
+							<TextBox Name="txtName"> Сюда имя писать короче</TextBox>
+						</StackPanel>
+						<StackPanel Margin="0,10,0,0" HorizontalAlignment="Center" Orientation="Horizontal" >
+							<Label Content="X" VerticalContentAlignment="Center"/>
+							<TextBox  Name="txtX" Width="80"/>
+							<Label Content="Y" VerticalContentAlignment="Center"/>
+							<TextBox  Name="txtY" Width="80"/>
+						</StackPanel>
+						<StackPanel Margin="0,10,0,0" HorizontalAlignment="Center" Orientation="Horizontal">
+							<Label Content="W" VerticalContentAlignment="Center"/>
+							<TextBox Name="txtW" Width="80" />
+							<Label Content="H" VerticalContentAlignment="Center"/>
+							<TextBox Name="txtH" Width="80"/>
+						</StackPanel>
+						<Slider Name="sliderScale" Minimum="0.5" Maximum="5" Value="1" TickFrequency="0.1" TickPlacement="BottomRight"/>
+
+						<Button Content="Применить" HorizontalAlignment="Center" Click="ApplySettings_Click" Margin="0 10 0 0"/>
 					</StackPanel>
+					
 				</TabItem>
 				<TabItem Name="Export" Header="Export">
 
@@ -68,8 +80,8 @@
 			</TabControl>
 		</Grid>
 		<!--Этот грид отвечает за правую панель списка элементов-->
-		<Button Grid.Column="5" Background="LightCoral" Click="Button_Click" Height="400" VerticalContentAlignment="Center"/>
-
+		<Button Grid.Column="5" Background="LightCoral" Height="400" VerticalContentAlignment="Center"/>
+		
 	</Grid>
 	
 </UserControl>
