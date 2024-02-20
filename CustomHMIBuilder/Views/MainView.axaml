@@ -13,21 +13,23 @@
   </Design.DataContext>
 
 	<!--Это основной Grid-->
+
+		
 	<Grid Background="OldLace" ColumnDefinitions="Auto,Auto,*,Auto,Auto">
 
 		<!--Кнопка смены положения левого меню-->
 		<Button  Grid.Column="0" Background="LightCoral" Height="400" VerticalContentAlignment="Center"/>
 
 		<!--Этот грид отвечает за левую панель списка элементов-->
-		<Grid Grid.Column="1" Name="navPanel" >
+		<Grid Grid.Column="1" Name="NavPanel" >
 
 			<!--Содержимое левого меню-->
 			<TabControl Grid.Column="1" Background="LightBlue" TabStripPlacement="Top" Width="270" >
 				<TabItem Header="MainMenu" >
 					<WrapPanel Background="LightGray" Margin="0,10,0,0" >
 							<Button Name="Button"  FontSize="20" Click="Button_Click">Button</Button>
-							<Button Name="Button1" FontSize="20">Button</Button>
-							<Button Name="Button2" FontSize="20">Button</Button>
+							<Button Name="Indicator" FontSize="20">Indicator</Button>
+							<Button Name="TemperatureTrend" FontSize="20">Temperature Trend</Button>
 					</WrapPanel>
 				</TabItem>
 				<TabItem Header="Что"   CornerRadius="5">
@@ -53,21 +55,21 @@
 					<StackPanel Orientation="Vertical" Background="LightGray" Margin="0,10,0,0">
 						<StackPanel  Orientation="Vertical" >
 							<Label FontSize="20" Content="Name" HorizontalAlignment="Center"/>
-							<TextBox Name="txtName"> Сюда имя писать короче</TextBox>
+							<TextBox Name="TxtName"> Сюда имя писать короче</TextBox>
 						</StackPanel>
 						<StackPanel Margin="0,10,0,0" HorizontalAlignment="Center" Orientation="Horizontal" >
 							<Label Content="X" VerticalContentAlignment="Center"/>
-							<TextBox  Name="txtX" Width="80"/>
+							<TextBox  Name="TxtX" Width="80"/>
 							<Label Content="Y" VerticalContentAlignment="Center"/>
-							<TextBox  Name="txtY" Width="80"/>
+							<TextBox  Name="TxtY" Width="80"/>
 						</StackPanel>
 						<StackPanel Margin="0,10,0,0" HorizontalAlignment="Center" Orientation="Horizontal">
 							<Label Content="W" VerticalContentAlignment="Center"/>
-							<TextBox Name="txtW" Width="80" />
+							<TextBox Name="TxtW" Width="80" />
 							<Label Content="H" VerticalContentAlignment="Center"/>
-							<TextBox Name="txtH" Width="80"/>
+							<TextBox Name="TxtH" Width="80"/>
 						</StackPanel>
-						<Slider Name="sliderScale" Minimum="0.5" Maximum="5" Value="1" TickFrequency="0.1" TickPlacement="BottomRight"/>
+						<Slider Name="SliderScale" Minimum="0.5" Maximum="5" Value="1" TickFrequency="0.1" TickPlacement="BottomRight"/>
 
 						<Button Content="Применить" HorizontalAlignment="Center" Click="ApplySettings_Click" Margin="0 10 0 0"/>
 					</StackPanel>
@@ -83,5 +85,4 @@
 		<Button Grid.Column="5" Background="LightCoral" Height="400" VerticalContentAlignment="Center"/>
 		
 	</Grid>
-	
 </UserControl>
