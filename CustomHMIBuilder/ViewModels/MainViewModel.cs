@@ -7,10 +7,8 @@ using ReactiveUI;
 
 namespace CustomHMIBuilder.ViewModels;
 
-public class MainViewModel : ViewModelBase
+public class MainViewModel : ReactiveObject
 {
-    
-    
     
 }
 

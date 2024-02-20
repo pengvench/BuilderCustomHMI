@@ -3,105 +3,102 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:vm="clr-namespace:CustomHMIBuilder.ViewModels"
-             mc:Ignorable="d" d:DesignWidth="1200" d:DesignHeight="720" 
+             mc:Ignorable="d" d:DesignWidth="1200" d:DesignHeight="720"
              x:Class="CustomHMIBuilder.Views.MainView"
              x:DataType="vm:MainViewModel">
-  <Design.DataContext>
-    <!-- This only sets the DataContext for the previewer in an IDE,
+    <Design.DataContext>
+        <!-- This only sets the DataContext for the previewer in an IDE,
          to set the actual DataContext for runtime, set the DataContext property in code (look at App.axaml.cs) -->
-    <vm:MainViewModel />
-  </Design.DataContext>
-	<!--Это основной Grid который задает кол-во строчек-->
-		<Grid RowDefinitions="Auto, Auto,*,Auto">
-		<!-- Хедер -->
-		<Grid Grid.Row="0" Height="40" Background="Coral">
-			
-		</Grid>
-		
-		<!-- Второй хедер -->
-		<Grid Grid.Row="1" Height="40" Background="LightCoral">
-			
-		</Grid>
-		<!-- Общага -->
-		<Grid Grid.Row="2" Background="OldLace" ColumnDefinitions="Auto,Auto,*,Auto,Auto" >
-			
-			<Button Grid.Column="0" Background="LightCoral" Height="400" VerticalContentAlignment="Center"/>
-			
-			<!--Этот грид отвечает за левую панель списка элементов-->
-			<Grid Grid.Column="1" Name="NavPanel" >
+        <vm:MainViewModel />
+    </Design.DataContext>
+    <!--Это основной Grid который задает кол-во строчек-->
+    <Grid RowDefinitions="Auto, Auto,*,Auto">
+        <!-- Хедер где будет какая-то кака-->
+        <Grid Grid.Row="0" Height="40" Background="Coral" />
 
-				<!--Содержимое левого меню-->
+        <!-- Второй хедер, где находюца панели "Конструктор" и "Пульт"-->
+        <Grid Grid.Row="1" Height="40" Background="LightCoral" />
 
-				<TabControl Background="LightBlue" TabStripPlacement="Top" Width="270" >
-					<TabItem Header="MainMenu" >
-						<ListBox Margin="0,10,0,0" >
-							<Button HorizontalAlignment="Center" Name="Button" Margin="5" FontSize="20"  CommandParameter="Button">Button</Button>
-							<Button HorizontalAlignment="Center" Name="Indicator" Margin="5" FontSize="20" CommandParameter="Indicator">Indicator</Button>
-							<Button HorizontalAlignment="Center" Name="TemperatureTrend" Margin="5" FontSize="20" CommandParameter="TemperatureTrend">Temperature Trend</Button>
-						</ListBox>
-					</TabItem>
-					<TabItem Header="Что"   CornerRadius="5">
+        <!-- Это короче грид отвечающий за Конструктор -->
+        <Grid Grid.Row="2" Background="OldLace" ColumnDefinitions="Auto,Auto,*,Auto,Auto">
 
-					</TabItem>
-				</TabControl>
+            <Button Grid.Column="0" Background="LightCoral" Height="400" VerticalContentAlignment="Center" />
 
-			</Grid>
-			
-			<!--Этот грид отвечает за основную рабочую область пульта-->
-			<Grid Grid.Column="2"  >
+            <!--Этот грид отвечает за левую панель списка элементов-->
+            <Grid Grid.Column="1" Name="NavPanel">
 
-				<!--Поле будующего пульта-->
-				<Canvas Name="MainCanvas" Margin="20" Background="LightCoral"  >
+                <!--Содержимое левого меню-->
 
-				</Canvas>
-				
-			</Grid>
-			
+                <TabControl Background="LightBlue" TabStripPlacement="Top" Width="270">
+                    <TabItem Header="Компоненты">
+                        <ListBox>
+                            <Button HorizontalAlignment="Center" Name="Button" FontSize="15">Button</Button>
+                            <Button HorizontalAlignment="Center" Name="Indicator" FontSize="15">Indicator</Button>
+                            <Button HorizontalAlignment="Center" Name="TemperatureTrend" FontSize="15">Temperature Trend</Button>
+                        </ListBox>
+                    </TabItem>
+                </TabControl>
 
-			<!--Этот грид отвечает за правую панель свойств-->
-			<Grid Name="PropPanel" Grid.Column="3">
-			
-				<TabControl TabStripPlacement="Top" Width="250" Background="LightBlue">
-					<TabItem Name="Edit" Header="Edit">
-						<StackPanel Orientation="Vertical" Background="LightGray" Margin="0,10,0,0">
-							<StackPanel  Orientation="Vertical" >
-								<Label FontSize="20" Content="Name" HorizontalAlignment="Center"/>
-								<TextBox Name="TxtName" > </TextBox>
-							</StackPanel>
-							<StackPanel Margin="0,10,0,0" HorizontalAlignment="Center" Orientation="Horizontal" >
-								<Label Content="X" VerticalContentAlignment="Center"/>
-								<TextBox  Name="TxtX"  Width="80" />
-								<Label Content="Y" VerticalContentAlignment="Center"/>
-								<TextBox  Name="TxtY" Width="80"  />
-							</StackPanel>
-							<StackPanel Margin="0,10,0,0" HorizontalAlignment="Center" Orientation="Horizontal">
-								<Label Content="W" VerticalContentAlignment="Center"/>
-								<TextBox Name="TxtW" Width="80" />
-								<Label Content="H" VerticalContentAlignment="Center"/>
-								<TextBox Name="TxtH" Width="80"/>
-							</StackPanel>
-							<Slider Name="SliderScale" Minimum="0.5" Maximum="5" Value="1" TickFrequency="0.1" TickPlacement="BottomRight"/>
+            </Grid>
 
-							<Button Content="Применить" HorizontalAlignment="Center"  Margin="0 10 0 0"/>
-						</StackPanel>
-					
-					</TabItem>
-					<TabItem Name="Export" Header="Export">
+            <!--Этот грид отвечает за основную рабочую область пульта-->
+            <Grid Grid.Column="2">
 
-					</TabItem>
+                <!--Поле будующего пульта-->
+                <Canvas Name="MainCanvas" Margin="20" Background="LightCoral" />
 
-				</TabControl>
-			</Grid>
-			
-			<Button Grid.Column="4" Background="LightCoral" Height="400" VerticalContentAlignment="Center"/>
-			
-		</Grid>
-		
-		<!-- Задница -->
-		<Grid Grid.Row="3" Background="blue" Height="40">
-			
-		</Grid>
-		
-		</Grid>
-	
+            </Grid>
+
+
+            <!--Этот грид отвечает за правую панель свойств-->
+            <Grid Name="PropPanel" Grid.Column="3">
+
+                <TabControl TabStripPlacement="Top" Width="250" Background="LightBlue">
+                    <!-- Тут короче панель свойств -->
+                    <TabItem Name="Edit" Header="Свойства">
+                        <StackPanel Background="LightGray">
+                            <!-- Это короче грид с именем -->
+                            <Grid ColumnDefinitions="Auto,*">
+                                <Label Grid.Column="0" FontSize="20" Content="Name - " VerticalAlignment="Center" />
+                                <TextBox Grid.Column="1" Name="TxtName" />
+                            </Grid>
+                            <!-- Тут короче значения позиции, ровно выровненные на минуточку -->
+                            <Grid HorizontalAlignment="Center" Margin="0,10,0,0" ColumnDefinitions="20,*,20,*">
+                                <Label Grid.Column="0" Content="X" HorizontalContentAlignment="Center"
+                                       VerticalContentAlignment="Center" />
+                                <NumericUpDown Grid.Column="1" Name="NumX" ShowButtonSpinner="False" AllowSpin="True" />
+                                <Label Grid.Column="2" Content="Y" HorizontalContentAlignment="Center"
+                                       VerticalContentAlignment="Center" />
+                                <NumericUpDown Grid.Column="3" Name="NumY" ShowButtonSpinner="False" AllowSpin="True" />
+                            </Grid>
+                            <!-- тут короче значения ширины, синхронны верхнему блоку, на минуточку -->
+                            <Grid Margin="0,10,0,0" HorizontalAlignment="Center" ColumnDefinitions="20,*,20,*">
+                                <Label Grid.Column="0" Content="W" HorizontalContentAlignment="Center"
+                                       VerticalContentAlignment="Center" />
+                                <NumericUpDown Grid.Column="1" Name="NumW" ShowButtonSpinner="False" AllowSpin="True" />
+                                <Label Grid.Column="2" Content="H" HorizontalContentAlignment="Center"
+                                       VerticalContentAlignment="Center" />
+                                <NumericUpDown Grid.Column="3" Name="NumH" ShowButtonSpinner="False" AllowSpin="True" />
+                            </Grid>
+
+                            <!-- Кнопка принятия ислама -->
+                            <Button Content="Применить" HorizontalAlignment="Center" Margin="0 10 0 0" />
+
+                        </StackPanel>
+                    </TabItem>
+
+                    <TabItem Name="Export" Header="Export" />
+
+                </TabControl>
+            </Grid>
+
+            <Button Grid.Column="4" Background="LightCoral" Height="400" VerticalContentAlignment="Center" />
+
+        </Grid>
+
+        <!-- Задница -->
+        <Grid Grid.Row="3" Background="blue" Height="40" />
+
+    </Grid>
+
 </UserControl>
