@@ -43,22 +43,23 @@
         </Grid>
 
         <!-- Это короче грид отвечающий за Конструктор -->
-        <Grid Grid.Row="2" Background="white" ColumnDefinitions="Auto,Auto,*,Auto,Auto">
+        <Grid Grid.Row="2" Background="#6d8392" ColumnDefinitions="Auto,Auto,*,Auto,Auto">
 
-            <Button Grid.Column="0" Background="LightCoral" Height="400" VerticalContentAlignment="Center" />
+            <Button Grid.Column="0" Background="LightSeaGreen" Height="400" VerticalContentAlignment="Center" />
 
             <!--Этот грид отвечает за левую панель списка элементов-->
             <Grid Grid.Column="1" Name="NavPanel">
 
                 <!--Содержимое левого меню-->
 
-                <TabControl Background="LightBlue" TabStripPlacement="Top" Width="270" >
+                <TabControl Background="#d2e9f8" TabStripPlacement="Top" Width="270" >
                     
-                    <TabItem Header="Компоненты"  >
-                        <ListBox Background="Transparent"  >
-                            <Button HorizontalAlignment="Center"  Name="Button" FontSize="15">Button</Button>
+                    <TabItem Header="Компоненты" >
+                        <ListBox Background="#e4eaf9" >
+                            <Button HorizontalAlignment="Center" Name="Button" FontSize="15">Button</Button>
                             <Button HorizontalAlignment="Center" Name="Indicator" FontSize="15">Indicator</Button>
                             <Button HorizontalAlignment="Center" Name="TemperatureTrend" FontSize="15">Temperature Trend</Button>
+                            
                         </ListBox>
                         
                     </TabItem>
@@ -71,7 +72,8 @@
             <Grid Grid.Column="2"  >
 
                 <!--Поле будующего пульта-->
-                <Canvas Name="MainCanvas" Margin="20" Background="LightCoral"  />
+                <Canvas Name="MainCanvas" Margin="20" Background="#808080"  />
+                
 
             </Grid>
 
@@ -79,7 +81,7 @@
             <!--Этот грид отвечает за правую панель свойств-->
             <Grid Name="PropPanel" Grid.Column="3">
 
-                <TabControl TabStripPlacement="Top" Width="250" Background="LightBlue">
+                <TabControl TabStripPlacement="Top" Width="250" Background="#d2e9f8">
                     <!-- Тут короче панель свойств -->
                     <TabItem Name="Edit" Header="Свойства">
                         <StackPanel Margin="5">
@@ -118,12 +120,12 @@
                 </TabControl>
             </Grid>
 
-            <Button Grid.Column="4" Background="LightCoral" Height="400" VerticalContentAlignment="Center" />
+            <Button Grid.Column="4" Background="LightSeaGreen" Height="400" VerticalContentAlignment="Center" />
 
         </Grid>
 
         <!-- Задница -->
-        <Grid Grid.Row="3" Background="LightGray" Height="40" />
+        <Grid Grid.Row="3" Background="LightSteelBlue" Height="40" />
 
     </Grid>
 
