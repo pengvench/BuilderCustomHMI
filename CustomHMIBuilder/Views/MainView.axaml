@@ -7,53 +7,43 @@
              x:Class="CustomHMIBuilder.Views.MainView"
              x:DataType="vm:MainViewModel">
     <Design.DataContext>
-        <!-- This only sets the DataContext for the previewer in an IDE,
-         to set the actual DataContext for runtime, set the DataContext property in code (look at App.axaml.cs) -->
         <vm:MainViewModel />
     </Design.DataContext>
+    
     <!--Это основной Grid который задает кол-во строчек-->
     <Grid RowDefinitions="Auto, Auto,*,Auto">
         <!-- Хедер где будет какая-то кака-->
-        
-        <Grid Grid.Row="0" Height="" Background="White"/>
-        
-            <DockPanel Grid.Row="0">
-                <Menu DockPanel.Dock="Left" Height="20" Foreground="Black" Background="White">
-                    <MenuItem Header="_File" FontSize="12"  Foreground="Black" Background="White">
-                        <MenuItem Header="_Open..." FontSize="12"  Foreground="Black" Background="White"/>
-                        <Separator/>
-                        <MenuItem Header="_Exit" FontSize="12"  Foreground="Black" Background="White"/>
-                    </MenuItem>
-                    <MenuItem Header="_Edit" FontSize="12"  Foreground="Black" Background="White">
-                        <MenuItem Header="Copy" FontSize="12"  Foreground="Black" Background="White"/>
-                        <MenuItem Header="Paste" FontSize="12"  Foreground="Black" Background="White"/>
-                    </MenuItem>
-                </Menu>
-                <TextBlock/>
-            </DockPanel>
-       
-        
 
-        <!--кака все что находится в хедере-->
-
+        <DockPanel Grid.Row="0">
+            <Menu DockPanel.Dock="Left" Height="20">
+                <MenuItem Header="_File" FontSize="12">
+                    <MenuItem Header="_Open..." FontSize="12" />
+                    <Separator />
+                    <MenuItem Header="_Exit" FontSize="12" />
+                </MenuItem>
+                <MenuItem Header="_Edit" FontSize="12">
+                    <MenuItem Header="Copy" FontSize="12" />
+                    <MenuItem Header="Paste" FontSize="12" />
+                </MenuItem>
+            </Menu>
+            <TextBlock />
+        </DockPanel>
 
         <!-- Второй хедер, где находюца панели "Конструктор" и "Пульт"-->
-        <Grid Grid.Row="1" Height="40" Background="LightSteelBlue" />
-        <Grid Grid.Row="1" >
+        <Grid Grid.Row="1" Height="40"  Background="LightSteelBlue" ColumnDefinitions="Auto,Auto,Auto,*,Auto">
             <!--панель левых кнопок-->
-            <StackPanel Grid.Row="1" Orientation="Horizontal" >
-                <Button Name="Home" Content="Главная" Background="Transparent" Foreground="Black" Margin="20,0,20,0"></Button>
-                <Button Name="Editor" Content="Кострутор" Background="Transparent" Foreground="Black" Margin="20,0,20,0"></Button>
-                <Button Name="Content" Content="Пульт" Background="Transparent" Foreground="Black" Margin="20,0,20,0"></Button>
-            </StackPanel>
-            <!--панель правых кнопок-->
-            <StackPanel Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Right" Margin="0,0,20,0">
-                <Button Name="SavePorgect" Content="Save Porject" Background="LightSeaGreen" Foreground="White" ></Button>
-            </StackPanel>
+            <Button Grid.Column="0" Name="Home" Content="Главная" Background="Transparent" FontWeight="Medium"
+                    Margin="5" />
+            <Button Grid.Column="1" Name="Editor" Content="Кострутор" Background="Transparent" FontWeight="Medium"
+                    Margin="5" />
+            <Button Grid.Column="2" Name="Content" Content="Пульт" Background="Transparent" FontWeight="Medium"
+                    Margin="5" />
+            <Button Grid.Column="4" HorizontalAlignment="Right" Name="SaveProject" Content="Сохранить проект"
+                    FontWeight="Medium" Margin="5" Background="LightSeaGreen" Foreground="White" />
         </Grid>
 
         <!-- Это короче грид отвечающий за Конструктор -->
-        <Grid Grid.Row="2" Background="White" ColumnDefinitions="Auto,Auto,*,Auto,Auto">
+        <Grid Grid.Row="2" Background="white" ColumnDefinitions="Auto,Auto,*,Auto,Auto">
 
             <Button Grid.Column="0" Background="LightCoral" Height="400" VerticalContentAlignment="Center" />
 
@@ -62,24 +52,26 @@
 
                 <!--Содержимое левого меню-->
 
-                <TabControl Background="LightBlue" TabStripPlacement="Top" Width="270">
-                    <TabItem Header="Компоненты" FontSize="16" FontWeight="Medium" >
-                        <ListBox>
-                            <Button HorizontalAlignment="Center" Name="Button" FontSize="15">Button</Button>
+                <TabControl Background="LightBlue" TabStripPlacement="Top" Width="270" >
+                    
+                    <TabItem Header="Компоненты"  >
+                        <ListBox Background="Transparent"  >
+                            <Button HorizontalAlignment="Center"  Name="Button" FontSize="15">Button</Button>
                             <Button HorizontalAlignment="Center" Name="Indicator" FontSize="15">Indicator</Button>
                             <Button HorizontalAlignment="Center" Name="TemperatureTrend" FontSize="15">Temperature Trend</Button>
                         </ListBox>
+                        
                     </TabItem>
-                    
                 </TabControl>
+
 
             </Grid>
 
             <!--Этот грид отвечает за основную рабочую область пульта-->
-            <Grid Grid.Column="2">
+            <Grid Grid.Column="2"  >
 
                 <!--Поле будующего пульта-->
-                <Canvas Name="MainCanvas" Margin="20" Background="LightCoral" />
+                <Canvas Name="MainCanvas" Margin="20" Background="LightCoral"  />
 
             </Grid>
 
@@ -89,8 +81,8 @@
 
                 <TabControl TabStripPlacement="Top" Width="250" Background="LightBlue">
                     <!-- Тут короче панель свойств -->
-                    <TabItem Name="Edit" Header="Свойства" FontSize="16" FontWeight="Medium">
-                        <StackPanel Background="LightGray">
+                    <TabItem Name="Edit" Header="Свойства">
+                        <StackPanel Margin="5">
                             <!-- Это короче грид с именем -->
                             <Grid ColumnDefinitions="Auto,*">
                                 <Label Grid.Column="0" FontSize="20" Content="Name - " VerticalAlignment="Center" />
@@ -121,7 +113,7 @@
                         </StackPanel>
                     </TabItem>
 
-                    <TabItem Name="Export" Header="Export" FontSize="16" FontWeight="Medium"/>
+                    <TabItem Name="Export" Header="Export" />
 
                 </TabControl>
             </Grid>
@@ -131,7 +123,7 @@
         </Grid>
 
         <!-- Задница -->
-        <Grid Grid.Row="3" Background="blue" Height="40" />
+        <Grid Grid.Row="3" Background="LightGray" Height="40" />
 
     </Grid>
 
