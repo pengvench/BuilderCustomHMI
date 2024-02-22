@@ -9,7 +9,7 @@
     <Design.DataContext>
         <vm:MainViewModel />
     </Design.DataContext>
-    
+
     <!--Это основной Grid который задает кол-во строчек-->
     <Grid RowDefinitions="Auto, Auto,*,Auto">
         <!-- Хедер где будет какая-то кака-->
@@ -17,7 +17,7 @@
         <DockPanel Grid.Row="0">
             <Menu DockPanel.Dock="Left" Height="20">
                 <MenuItem Header="_File" FontSize="12">
-                    <MenuItem Header="_Open..." FontSize="12" />
+                    <MenuItem Header="_Open...;" FontSize="12" />
                     <Separator />
                     <MenuItem Header="_Exit" FontSize="12" />
                 </MenuItem>
@@ -30,7 +30,7 @@
         </DockPanel>
 
         <!-- Второй хедер, где находюца панели "Конструктор" и "Пульт"-->
-        <Grid Grid.Row="1" Height="40"  Background="LightSteelBlue" ColumnDefinitions="Auto,Auto,Auto,*,Auto">
+        <Grid Grid.Row="1" Height="40" Background="LightSteelBlue" ColumnDefinitions="Auto,Auto,Auto,*,Auto">
             <!--панель левых кнопок-->
             <Button Grid.Column="0" Name="Home" Content="Главная" Background="Transparent" FontWeight="Medium"
                     Margin="5" />
@@ -52,16 +52,57 @@
 
                 <!--Содержимое левого меню-->
 
-                <TabControl Background="#d2e9f8" TabStripPlacement="Top" Width="270" >
-                    
-                    <TabItem Header="Компоненты" >
-                        <ListBox Background="#e4eaf9" >
-                            <Button HorizontalAlignment="Center" Name="Button" FontSize="15">Button</Button>
-                            <Button HorizontalAlignment="Center" Name="Indicator" FontSize="15">Indicator</Button>
-                            <Button HorizontalAlignment="Center" Name="TemperatureTrend" FontSize="15">Temperature Trend</Button>
-                            
+                <TabControl Background="#d2e9f8" TabStripPlacement="Top" Width="270">
+                    <TabItem Header="Компоненты">
+                        <ListBox Background="#e4eaf9">
+                            <Button HorizontalAlignment="Center" Name="label" Width="200"
+                                    HorizontalContentAlignment="Center" FontSize="15">
+                                Label
+                            </Button>
+                            <Button HorizontalAlignment="Center" Name="Button" Width="200"
+                                    HorizontalContentAlignment="Center" FontSize="15">
+                                Button
+                            </Button>
+                            <Button HorizontalAlignment="Center" Name="Indicator" Width="200"
+                                    HorizontalContentAlignment="Center" FontSize="15">
+                                Indicator
+                            </Button>
+                            <Button HorizontalAlignment="Center" Name="TemperatureTrend" Width="200"
+                                    HorizontalContentAlignment="Center" FontSize="15">
+                                Temperature Trend
+                            </Button>
+                            <Button HorizontalAlignment="Center" Name="Text Box" Width="200"
+                                    HorizontalContentAlignment="Center" FontSize="15">
+                                Text Box
+                            </Button>
+                            <Button HorizontalAlignment="Center" Name="Border" Width="200"
+                                    HorizontalContentAlignment="Center" FontSize="15">
+                                Border
+                            </Button>
+                            <Button HorizontalAlignment="Center" Name="Slider" Width="200"
+                                    HorizontalContentAlignment="Center" FontSize="15">
+                                Slider
+                            </Button>
+                            <Button HorizontalAlignment="Center" Name="DropdownList" Width="200"
+                                    HorizontalContentAlignment="Center" FontSize="15">
+                                Dropdown list
+                            </Button>
+                            <Button HorizontalAlignment="Center" Name="TabControl" Width="200"
+                                    HorizontalContentAlignment="Center" FontSize="15">
+                                Tab Control
+                            </Button>
+                            <Button HorizontalAlignment="Center" Name="ComboBox" Width="200"
+                                    HorizontalContentAlignment="Center" FontSize="15">
+                                Combo Box
+                            </Button>
+                            <Button HorizontalAlignment="Center" Name="Table" Width="200"
+                                    HorizontalContentAlignment="Center" FontSize="15">
+                                Table
+                            </Button>
+
+
                         </ListBox>
-                        
+
                     </TabItem>
                 </TabControl>
 
@@ -69,11 +110,10 @@
             </Grid>
 
             <!--Этот грид отвечает за основную рабочую область пульта-->
-            <Grid Grid.Column="2"  >
+            <Grid Grid.Column="2" Background="LightGreen">
 
                 <!--Поле будующего пульта-->
-                <Canvas Name="MainCanvas" Margin="20" Background="#808080"  />
-                
+
 
             </Grid>
 
@@ -83,7 +123,7 @@
 
                 <TabControl TabStripPlacement="Top" Width="250" Background="#d2e9f8">
                     <!-- Тут короче панель свойств -->
-                    <TabItem Name="Edit" Header="Свойства">
+                    <TabItem Name="Edit" Header="Свойства" FontSize="20">
                         <StackPanel Margin="5">
                             <!-- Это короче грид с именем -->
                             <Grid ColumnDefinitions="Auto,*">
@@ -109,13 +149,14 @@
                                 <NumericUpDown Grid.Column="3" Name="NumH" ShowButtonSpinner="False" AllowSpin="True" />
                             </Grid>
 
+
                             <!-- Кнопка принятия ислама -->
                             <Button Content="Применить" HorizontalAlignment="Center" Margin="0 10 0 0" />
 
                         </StackPanel>
                     </TabItem>
 
-                    <TabItem Name="Export" Header="Export" />
+                    <TabItem Name="Export" Header="Экспорт" FontSize="20" />
 
                 </TabControl>
             </Grid>
@@ -126,6 +167,14 @@
 
         <!-- Задница -->
         <Grid Grid.Row="3" Background="LightSteelBlue" Height="40" />
+        <Grid Grid.Row="3" ColumnDefinitions="*,Auto,Auto,*">
+            <Button Grid.Column="2" Margin="5,0,0,0" Background="LightSeaGreen" Foreground="White"
+                    Content="Собрать пульт" />
+            <Button Grid.Column="3" Margin="0,0,280,0" Background="LightSeaGreen" Foreground="White"
+                    HorizontalAlignment="Right" Content="Зброс" />
+
+        </Grid>
+
 
     </Grid>
 
