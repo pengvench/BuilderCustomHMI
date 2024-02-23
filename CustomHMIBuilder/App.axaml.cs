@@ -1,4 +1,8 @@
-﻿using Avalonia;
+﻿using System;
+using System.Collections.Generic;
+using System.Threading;
+using System.Threading.Tasks;
+using Avalonia;
 using Avalonia.Controls.ApplicationLifetimes;
 using Avalonia.Markup.Xaml;
 
@@ -14,21 +18,50 @@ public partial class App : Application
         AvaloniaXamlLoader.Load(this);
     }
 
-    public override void OnFrameworkInitializationCompleted()
+    public override async void OnFrameworkInitializationCompleted()
     {
         if (ApplicationLifetime is IClassicDesktopStyleApplicationLifetime desktop)
         {
-            desktop.MainWindow = new MainWindow
+            var splashWindow = new Splash();
+            var splashViewModel = new SplashViewModel();
+
+            splashWindow.DataContext = splashViewModel;
+            desktop.MainWindow = splashWindow;
+
+            var loadingMessages = new List<string>
+            {
+                "Пьем кофе",
+                "Читаем википедию",
+                "Гуглим код",
+                "Открываем приложение"
+            };
+
+            try
+            {
+                foreach (var message in loadingMessages)
+                {
+                    for (int i = 0; i < 3; i++)
+                    {
+                        splashViewModel.StartUpMessage = $"{message}{'.'.ToString().PadRight(i + 1, '.')}";
+                        await Task.Delay(500, cancellationToken: splashViewModel.CancellationToken); 
+                    }
+                }
+            }
+            catch (TaskCanceledException)
+            {
+                splashWindow.Close();
+                return;
+            }
+
+            var mainWindow = new MainWindow
             {
                 DataContext = new MainViewModel()
             };
-        }
-        else if (ApplicationLifetime is ISingleViewApplicationLifetime singleViewPlatform)
-        {
-            singleViewPlatform.MainView = new MainView
-            {
-                DataContext = new MainViewModel()
-            };
+
+            Thread.Sleep(500); // Подождать немного перед закрытием Splash screen
+            desktop.MainWindow = mainWindow;
+            mainWindow.Show();
+            splashWindow.Close();
         }
 
         base.OnFrameworkInitializationCompleted();

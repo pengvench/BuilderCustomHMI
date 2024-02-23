@@ -9,19 +9,29 @@
     <Design.DataContext>
         <vm:MainViewModel />
     </Design.DataContext>
+    
+    <UserControl.Resources>
+        <!-- Создание ресурса типа VisualBrush с названием "TemplateGrid". -->
+        <VisualBrush x:Key="TemplateGrid" TileMode="Tile" SourceRect="0,0,40,40" DestinationRect="0,0,40,40">
+            <VisualBrush.Visual>
+                <!-- Визуальное представление кисти содержит путь для отображения визуального элемента в виде сетки. -->
+                <Path Data="M 0,0 L 40,0 M 0,10 L 40,10 M 0,20 L 40,20 M 0,30 L 40,30 M 0,40 L 40,40 M 0,0 L 0,40 M 10,0 L 10,40 M 20,0 L 20,40 M 30,0 L 30,40 M 40,0 L 40,40" Stroke="#FFF5F5F5" StrokeThickness="0.5" />
+            </VisualBrush.Visual>
+        </VisualBrush>
+    </UserControl.Resources>
 
     <!--Это основной Grid который задает кол-во строчек-->
-    <Grid RowDefinitions="Auto, Auto,*,Auto">
+    <Grid RowDefinitions="Auto,Auto,*,Auto">
         <!-- Хедер где будет какая-то кака-->
 
         <DockPanel Grid.Row="0">
             <Menu DockPanel.Dock="Left" Height="20">
-                <MenuItem Header="_File" FontSize="12">
-                    <MenuItem Header="_Open...;" FontSize="12" />
+                <MenuItem Header="File" FontSize="12">
+                    <MenuItem Header="Open" FontSize="12" />
                     <Separator />
-                    <MenuItem Header="_Exit" FontSize="12" />
+                    <MenuItem Header="Exit" FontSize="12" />
                 </MenuItem>
-                <MenuItem Header="_Edit" FontSize="12">
+                <MenuItem Header="Edit" FontSize="12">
                     <MenuItem Header="Copy" FontSize="12" />
                     <MenuItem Header="Paste" FontSize="12" />
                 </MenuItem>
@@ -54,8 +64,8 @@
 
                 <TabControl Background="#d2e9f8" TabStripPlacement="Top" Width="270">
                     <TabItem Header="Компоненты">
-                        <ListBox Background="#e4eaf9">
-                            <Button HorizontalAlignment="Center" Name="label" Width="200"
+                        <ListBox Background="Transparent">
+                            <Button HorizontalAlignment="Center" Name="Label" Width="200"
                                     HorizontalContentAlignment="Center" FontSize="15">
                                 Label
                             </Button>
@@ -71,14 +81,11 @@
                                     HorizontalContentAlignment="Center" FontSize="15">
                                 Temperature Trend
                             </Button>
-                            <Button HorizontalAlignment="Center" Name="Text Box" Width="200"
+                            <Button HorizontalAlignment="Center" Name="TextBox" Width="200"
                                     HorizontalContentAlignment="Center" FontSize="15">
                                 Text Box
                             </Button>
-                            <Button HorizontalAlignment="Center" Name="Border" Width="200"
-                                    HorizontalContentAlignment="Center" FontSize="15">
-                                Border
-                            </Button>
+
                             <Button HorizontalAlignment="Center" Name="Slider" Width="200"
                                     HorizontalContentAlignment="Center" FontSize="15">
                                 Slider
@@ -87,33 +94,24 @@
                                     HorizontalContentAlignment="Center" FontSize="15">
                                 Dropdown list
                             </Button>
-                            <Button HorizontalAlignment="Center" Name="TabControl" Width="200"
+                            <Button HorizontalAlignment="Center" Name="Numeric" Width="200"
                                     HorizontalContentAlignment="Center" FontSize="15">
-                                Tab Control
+                                Numeric UP Down
                             </Button>
                             <Button HorizontalAlignment="Center" Name="ComboBox" Width="200"
                                     HorizontalContentAlignment="Center" FontSize="15">
                                 Combo Box
                             </Button>
-                            <Button HorizontalAlignment="Center" Name="Table" Width="200"
-                                    HorizontalContentAlignment="Center" FontSize="15">
-                                Table
-                            </Button>
-
-
                         </ListBox>
-
                     </TabItem>
                 </TabControl>
-
-
             </Grid>
 
             <!--Этот грид отвечает за основную рабочую область пульта-->
-            <Grid Grid.Column="2" Background="LightGreen">
+            <Grid Grid.Column="2" Background="#6d8392" >
 
                 <!--Поле будующего пульта-->
-
+                <Canvas Margin="20" Background="{DynamicResource TemplateGrid}" />
 
             </Grid>
 
@@ -121,7 +119,7 @@
             <!--Этот грид отвечает за правую панель свойств-->
             <Grid Name="PropPanel" Grid.Column="3">
 
-                <TabControl TabStripPlacement="Top" Width="250" Background="#d2e9f8">
+                <TabControl TabStripPlacement="Top" Width="270" Background="#d2e9f8">
                     <!-- Тут короче панель свойств -->
                     <TabItem Name="Edit" Header="Свойства" FontSize="20">
                         <StackPanel Margin="5">
@@ -148,8 +146,7 @@
                                        VerticalContentAlignment="Center" />
                                 <NumericUpDown Grid.Column="3" Name="NumH" ShowButtonSpinner="False" AllowSpin="True" />
                             </Grid>
-
-
+                            
                             <!-- Кнопка принятия ислама -->
                             <Button Content="Применить" HorizontalAlignment="Center" Margin="0 10 0 0" />
 
@@ -166,15 +163,13 @@
         </Grid>
 
         <!-- Задница -->
-        <Grid Grid.Row="3" Background="LightSteelBlue" Height="40" />
-        <Grid Grid.Row="3" ColumnDefinitions="*,Auto,Auto,*">
-            <Button Grid.Column="2" Margin="5,0,0,0" Background="LightSeaGreen" Foreground="White"
+        <Grid Grid.Row="3" Background="LightSteelBlue" Height="40" ColumnDefinitions="*,Auto,*,Auto,*">
+
+            <Button Grid.Column="1" Margin="5,0,0,0" Background="LightSeaGreen" Foreground="White"
                     Content="Собрать пульт" />
-            <Button Grid.Column="3" Margin="0,0,280,0" Background="LightSeaGreen" Foreground="White"
-                    HorizontalAlignment="Right" Content="Зброс" />
-
+            <Button Grid.Column="3" Background="LightSeaGreen" Foreground="White"
+                    HorizontalAlignment="Right" Content="Сброс" />
         </Grid>
-
 
     </Grid>
 
