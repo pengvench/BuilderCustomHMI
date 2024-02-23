@@ -7,6 +7,14 @@ namespace CustomHMIBuilder.ViewModels;
 
 internal class SplashViewModel : ViewModelBase
 {
+    
+    private double _progressValue;
+    public double ProgressValue
+    {
+        get => _progressValue;
+        set => this.RaiseAndSetIfChanged(ref _progressValue, value);
+    }
+    
     private string _startUpMessage = "Загрузка приложения...";
 
     public string StartUpMessage

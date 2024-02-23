@@ -36,6 +36,8 @@ public partial class App : Application
                 "Открываем приложение"
             };
 
+            double progressStep = 100.0 / (loadingMessages.Count * 3);
+            
             try
             {
                 foreach (var message in loadingMessages)
@@ -43,6 +45,7 @@ public partial class App : Application
                     for (int i = 0; i < 3; i++)
                     {
                         splashViewModel.StartUpMessage = $"{message}{'.'.ToString().PadRight(i + 1, '.')}";
+                        splashViewModel.ProgressValue += progressStep;
                         await Task.Delay(500, cancellationToken: splashViewModel.CancellationToken); 
                     }
                 }
