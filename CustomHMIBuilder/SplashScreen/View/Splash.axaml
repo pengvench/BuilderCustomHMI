@@ -3,8 +3,9 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:viewModels="clr-namespace:CustomHMIBuilder.ViewModels"
+        xmlns:viewModel="clr-namespace:CustomHMIBuilder.SplashScreen.ViewModel"
         mc:Ignorable="d" 
-        x:Class="CustomHMIBuilder.Views.Splash"
+        x:Class="CustomHMIBuilder.SplashScreen.View.Splash"
         Width="250"
         Height="150"
         SystemDecorations="None"
@@ -13,11 +14,11 @@
         TransparencyLevelHint="Transparent"
         TransparencyBackgroundFallback="Transparent"
         Title="Splash"
-        x:DataType="viewModels:SplashViewModel">
+        x:DataType="viewModel:SplashViewModel">
         
         <Border Background="White" CornerRadius="5">
                 <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center" Spacing="10">
-                        <Image Source="../Assets/avalonia-logo.ico" Width="50" Height="50"></Image>
+                        <Image Source="/Assets/avalonia-logo.ico" Width="50" Height="50"></Image>
                         <ProgressBar Maximum="100" Value="{Binding ProgressValue}" IsIndeterminate="False" Width="200"/>
                         <TextBlock Text="{Binding StartUpMessage}"/>
                         <Button HorizontalAlignment="Center" Command="{Binding Cancel}" Content="Отмена"/>

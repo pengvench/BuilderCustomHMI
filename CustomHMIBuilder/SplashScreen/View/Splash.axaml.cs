@@ -1,8 +1,6 @@
-﻿using Avalonia;
-using Avalonia.Controls;
-using Avalonia.Markup.Xaml;
+﻿using Avalonia.Controls;
 
-namespace CustomHMIBuilder.Views;
+namespace CustomHMIBuilder.SplashScreen.View;
 
 public partial class Splash : Window
 {

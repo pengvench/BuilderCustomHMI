@@ -1,9 +1,8 @@
-﻿using ReactiveUI;
-using System;
-using System.Threading;
-using System.Threading.Tasks;
+﻿using System.Threading;
+using CustomHMIBuilder.ViewModels;
+using ReactiveUI;
 
-namespace CustomHMIBuilder.ViewModels;
+namespace CustomHMIBuilder.SplashScreen.ViewModel;
 
 internal class SplashViewModel : ViewModelBase
 {

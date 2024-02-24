@@ -39,7 +39,7 @@
             <!--панель левых кнопок-->
             <Button Grid.Column="0" Name="Home" Content="Главная" Background="Transparent" FontWeight="Medium"
                     Margin="5" />
-            <Button Grid.Column="1" Name="Editor" Content="Кострутор" Background="Transparent" FontWeight="Medium"
+            <Button Grid.Column="1" Name="Editor"  Content="Кострутор" Background="Transparent" FontWeight="Medium"
                     Margin="5" />
             <Button Grid.Column="2" Name="Content" Content="Пульт" Background="Transparent" FontWeight="Medium"
                     Margin="5" />

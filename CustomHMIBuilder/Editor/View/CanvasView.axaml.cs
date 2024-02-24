@@ -1,6 +1,6 @@
 ﻿using Avalonia.Controls;
 
-namespace CustomHMIBuilder.Views;
+namespace CustomHMIBuilder.Editor.View;
 
 public partial class CanvasView : UserControl
 {

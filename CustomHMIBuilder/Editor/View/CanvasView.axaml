@@ -2,11 +2,11 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-             xmlns:vm="clr-namespace:CustomHMIBuilder.Editor.ViewModels"
+             xmlns:viewModel="clr-namespace:CustomHMIBuilder.Editor.ViewModel"
              mc:Ignorable="d" 
            
-             x:Class="CustomHMIBuilder.Views.CanvasView"
-             x:DataType="vm:CanvasVM">
+             x:Class="CustomHMIBuilder.Editor.View.CanvasView"
+             x:DataType="viewModel:CanvasVM">
     
     <UserControl.Resources>
         <!-- Создание ресурса типа VisualBrush с названием "TemplateGrid". -->

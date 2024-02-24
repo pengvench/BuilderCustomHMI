@@ -1,4 +1,4 @@
-﻿namespace CustomHMIBuilder.Editor.ViewModels;
+﻿namespace CustomHMIBuilder.Editor.ViewModel;
 
 public class ControlsMenuVM
 {

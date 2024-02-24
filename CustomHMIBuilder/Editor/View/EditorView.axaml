@@ -2,12 +2,12 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-             xmlns:viewModels="clr-namespace:CustomHMIBuilder.Editor.ViewModels"
              xmlns:views="clr-namespace:CustomHMIBuilder.Views"
              xmlns:view="clr-namespace:CustomHMIBuilder.Editor.View"
+             xmlns:viewModel="clr-namespace:CustomHMIBuilder.Editor.ViewModel"
              mc:Ignorable="d" d:DesignWidth="1200" d:DesignHeight="720"
-             x:Class="CustomHMIBuilder.Views.EditorView"
-             x:DataType="viewModels:EditorVM">
+             x:Class="CustomHMIBuilder.Editor.View.EditorView"
+             x:DataType="viewModel:EditorVM">
 
     <!--Это основной Grid который задает кол-во строчек-->
     <Grid RowDefinitions="*,Auto">
@@ -23,7 +23,7 @@
 
             <!--Этот грид отвечает за основную рабочую область пульта-->
             <Grid Grid.Column="2">
-                <views:CanvasView />
+                <view:CanvasView />
             </Grid>
 
             <!--Этот грид отвечает за правую панель свойств-->
