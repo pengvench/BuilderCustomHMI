@@ -26,16 +26,16 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Compile Update="SplashScreen\Splash.axaml.cs">
-      <DependentUpon>Splash.axaml</DependentUpon>
-      <SubType>Code</SubType>
-    </Compile>
     <Compile Update="Editor\View\CanvasView.axaml.cs">
       <DependentUpon>CanvasView.axaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="Editor\View\EditorView.axaml.cs">
       <DependentUpon>EditorView.axaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="SplashScreen\View\Splash.axaml.cs">
+      <DependentUpon>Splash.axaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
   </ItemGroup>

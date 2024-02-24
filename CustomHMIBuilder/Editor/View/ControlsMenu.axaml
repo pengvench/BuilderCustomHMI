@@ -7,54 +7,35 @@
              x:Class="CustomHMIBuilder.Editor.View.ControlsMenu"
              x:DataType="view:ControlsMenu">
 
-             <!--Этот грид отвечает за левую панель списка элементов-->
-            <Grid Name="NavPanel">
+    <!--Этот грид отвечает за левую панель списка элементов-->
+    <Grid Name="NavPanel">
 
-                <!--Содержимое левого меню-->
+        <!--Содержимое левого меню-->
 
-                <TabControl Background="#d2e9f8" TabStripPlacement="Top" Width="270">
-                    <TabItem Header="Компоненты">
-                        <ListBox Background="Transparent">
-                            <Button HorizontalAlignment="Center" Name="Label" Width="200"
-                                    HorizontalContentAlignment="Center" FontSize="15">
-                                Label
-                            </Button>
-                            <Button HorizontalAlignment="Center" Name="Button" Width="200"
-                                    HorizontalContentAlignment="Center" FontSize="15">
-                                Button
-                            </Button>
-                            <Button HorizontalAlignment="Center" Name="Indicator" Width="200"
-                                    HorizontalContentAlignment="Center" FontSize="15">
-                                Indicator
-                            </Button>
-                            <Button HorizontalAlignment="Center" Name="TemperatureTrend" Width="200"
-                                    HorizontalContentAlignment="Center" FontSize="15">
-                                Temperature Trend
-                            </Button>
-                            <Button HorizontalAlignment="Center" Name="TextBox" Width="200"
-                                    HorizontalContentAlignment="Center" FontSize="15">
-                                Text Box
-                            </Button>
+        <TabControl Background="#d2e9f8" TabStripPlacement="Top" Width="270">
+            <TabItem Header="Компоненты">
+                <ListBox Background="Transparent">
+                    <Button HorizontalAlignment="Center" Name="Label" Width="200"
+                            HorizontalContentAlignment="Center" FontSize="15" Content="Label" />
+                    <Button HorizontalAlignment="Center" Name="Button" Width="200"
+                            HorizontalContentAlignment="Center" FontSize="15" Content="Button" />
+                    <Button HorizontalAlignment="Center" Name="Indicator" Width="200"
+                            HorizontalContentAlignment="Center" FontSize="15" Content="Indicator" />
+                    <Button HorizontalAlignment="Center" Name="TemperatureTrend" Width="200"
+                            HorizontalContentAlignment="Center" FontSize="15" Content="Temperature Trend" />
+                    <Button HorizontalAlignment="Center" Name="TextBox" Width="200"
+                            HorizontalContentAlignment="Center" FontSize="15" Content="Text Box" />
+                    <Button HorizontalAlignment="Center" Name="Slider" Width="200"
+                            HorizontalContentAlignment="Center" FontSize="15" Content="Slider" />
+                    <Button HorizontalAlignment="Center" Name="DropdownList" Width="200"
+                            HorizontalContentAlignment="Center" FontSize="15" Content="Dropdown list" />
+                    <Button HorizontalAlignment="Center" Name="Numeric" Width="200"
+                            HorizontalContentAlignment="Center" FontSize="15" Content="Numeric UP Down" />
+                    <Button HorizontalAlignment="Center" Name="ComboBox" Width="200"
+                            HorizontalContentAlignment="Center" FontSize="15" Content="Combo Box" />
+                </ListBox>
+            </TabItem>
+        </TabControl>
+    </Grid>
 
-                            <Button HorizontalAlignment="Center" Name="Slider" Width="200"
-                                    HorizontalContentAlignment="Center" FontSize="15">
-                                Slider
-                            </Button>
-                            <Button HorizontalAlignment="Center" Name="DropdownList" Width="200"
-                                    HorizontalContentAlignment="Center" FontSize="15">
-                                Dropdown list
-                            </Button>
-                            <Button HorizontalAlignment="Center" Name="Numeric" Width="200"
-                                    HorizontalContentAlignment="Center" FontSize="15">
-                                Numeric UP Down
-                            </Button>
-                            <Button HorizontalAlignment="Center" Name="ComboBox" Width="200"
-                                    HorizontalContentAlignment="Center" FontSize="15">
-                                Combo Box
-                            </Button>
-                        </ListBox>
-                    </TabItem>
-                </TabControl>
-            </Grid>
-    
 </UserControl>
