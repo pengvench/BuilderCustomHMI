@@ -5,10 +5,10 @@ using System.Threading.Tasks;
 using Avalonia;
 using Avalonia.Controls.ApplicationLifetimes;
 using Avalonia.Markup.Xaml;
+using CustomHMIBuilder.SplashScreen.View;
 using CustomHMIBuilder.SplashScreen.ViewModel;
 using CustomHMIBuilder.ViewModels;
 using CustomHMIBuilder.Views;
-using Splash = CustomHMIBuilder.SplashScreen.View.Splash;
 
 namespace CustomHMIBuilder;
 
@@ -59,7 +59,7 @@ public partial class App : Application
 
             var mainWindow = new MainWindow
             {
-                DataContext = new ViewModelBase()
+      
             };
 
             Thread.Sleep(500); // Подождать немного перед закрытием Splash screen
