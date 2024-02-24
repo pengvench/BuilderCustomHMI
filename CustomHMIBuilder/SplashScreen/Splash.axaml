@@ -1,7 +1,6 @@
 ﻿<Window xmlns="https://github.com/avaloniaui"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-        xmlns:anim="https://github.com/whistyun/AnimatedImage.Avalonia"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:viewModels="clr-namespace:CustomHMIBuilder.ViewModels"
         mc:Ignorable="d" 
@@ -21,7 +20,7 @@
                         <Image Source="../Assets/avalonia-logo.ico" Width="50" Height="50"></Image>
                         <ProgressBar Maximum="100" Value="{Binding ProgressValue}" IsIndeterminate="False" Width="200"/>
                         <TextBlock Text="{Binding StartUpMessage}"/>
-                        <Button HorizontalAlignment="Center" Command="{Binding Cancel}" >Отмена</Button>
+                        <Button HorizontalAlignment="Center" Command="{Binding Cancel}" Content="Отмена"/>
                 </StackPanel>                
                 
         </Border>

@@ -24,4 +24,19 @@
     <!--Condition below is needed to remove Avalonia.Diagnostics package from build output in Release configuration.-->
     <PackageReference Condition="'$(Configuration)' == 'Debug'" Include="Avalonia.Diagnostics" Version="11.0.9" />
   </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="SplashScreen\Splash.axaml.cs">
+      <DependentUpon>Splash.axaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Editor\View\CanvasView.axaml.cs">
+      <DependentUpon>CanvasView.axaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Editor\View\EditorView.axaml.cs">
+      <DependentUpon>EditorView.axaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
 </Project>

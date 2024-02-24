@@ -1,66 +1,33 @@
-<Window xmlns="https://github.com/avaloniaui"
-        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        xmlns:vm="using:CustomHMIBuilder.ViewModels"
-        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:views="clr-namespace:CustomHMIBuilder.Views"
-        xmlns:view="clr-namespace:CustomHMIBuilder.Editor.View"
-        mc:Ignorable="d"
-        x:Class="CustomHMIBuilder.Views.MainWindow"
-        Icon="/Assets/avalonia-logo.ico"
-	    WindowStartupLocation="CenterScreen"
-		WindowState="Maximized"
-		MinWidth="1200" MinHeight="720"
-        Title="BuilderCustomHMI" 
-        x:DataType="vm:ViewModelBase">
+﻿<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:vm="clr-namespace:CustomHMIBuilder.Editor.ViewModels"
+             xmlns:viewModels="clr-namespace:CustomHMIBuilder.Editor.ViewModels"
+             mc:Ignorable="d" d:DesignWidth="1200" d:DesignHeight="720"
+             x:Class="CustomHMIBuilder.Views.EditorView"
+             x:DataType="viewModels:EditorVM">
+    
+    <Design.DataContext>
+        <viewModels:EditorVM />
+    </Design.DataContext>
 
-    <!--Это основной Grid который задает кол-во строчек-->
+   <!--Это основной Grid который задает кол-во строчек-->
     <Grid RowDefinitions="Auto,Auto,*,Auto">
-        <!-- Хедер где будет какая-то кака-->
 
-        <DockPanel Grid.Row="0">
-            <Menu DockPanel.Dock="Left" Height="20">
-                <MenuItem Header="File" FontSize="12">
-                    <MenuItem Header="Open" FontSize="12" />
-                    <Separator />
-                    <MenuItem Header="Exit" FontSize="12" />
-                </MenuItem>
-                <MenuItem Header="Edit" FontSize="12">
-                    <MenuItem Header="Copy" FontSize="12" />
-                    <MenuItem Header="Paste" FontSize="12" />
-                </MenuItem>
-            </Menu>
-            <TextBlock />
-        </DockPanel>
-
-        <!-- Второй хедер, где находюца панели "Конструктор" и "Пульт"-->
-        <Grid Grid.Row="1" Height="40" Background="LightSteelBlue" ColumnDefinitions="Auto,Auto,Auto,*,Auto">
-            <!--панель левых кнопок-->
-            <Button Grid.Column="0" Name="Home" Content="Главная" Background="Transparent" FontWeight="Medium"
-                    Margin="5" />
-            <Button Grid.Column="1" Name="Editor" Content="Кострутор" Background="Transparent" FontWeight="Medium"
-                    Margin="5" />
-            <Button Grid.Column="2" Name="Content" Content="Пульт" Background="Transparent" FontWeight="Medium"
-                    Margin="5" />
-            <Button Grid.Column="4" HorizontalAlignment="Right" Name="SaveProject" Content="Сохранить проект"
-                    FontWeight="Medium" Margin="5" Background="LightSeaGreen" Foreground="White" />
-        </Grid>
 
         <!-- Это короче грид отвечающий за Конструктор -->
         <Grid Grid.Row="2" Background="#6d8392" ColumnDefinitions="Auto,Auto,*,Auto,Auto">
 
             <Button Grid.Column="0" Background="LightSeaGreen" Height="400" VerticalContentAlignment="Center" />
 
-            <!--Этот грид отвечает за левую панель списка элементов-->
-            <Grid Grid.Column="1" Name="NavPanel">
-
-                    <view:ControlsMenu></view:ControlsMenu>
-            </Grid>
+           
 
             <!--Этот грид отвечает за основную рабочую область пульта-->
             <Grid Grid.Column="2" Background="#6d8392" >
 
-                <views:CanvasView Margin="15"></views:CanvasView>
+                <!--Поле будующего пульта-->
+                <Canvas Margin="20" Background="{DynamicResource TemplateGrid}" />
 
             </Grid>
 
@@ -121,6 +88,5 @@
         </Grid>
 
     </Grid>
-	
-	    
-</Window>
+    
+</UserControl>

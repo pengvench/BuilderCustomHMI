@@ -1,0 +1,60 @@
+﻿<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:view="clr-namespace:CustomHMIBuilder.Editor.View"
+             mc:Ignorable="d"
+             x:Class="CustomHMIBuilder.Editor.View.ControlsMenu"
+             x:DataType="view:ControlsMenu">
+
+             <!--Этот грид отвечает за левую панель списка элементов-->
+            <Grid Name="NavPanel">
+
+                <!--Содержимое левого меню-->
+
+                <TabControl Background="#d2e9f8" TabStripPlacement="Top" Width="270">
+                    <TabItem Header="Компоненты">
+                        <ListBox Background="Transparent">
+                            <Button HorizontalAlignment="Center" Name="Label" Width="200"
+                                    HorizontalContentAlignment="Center" FontSize="15">
+                                Label
+                            </Button>
+                            <Button HorizontalAlignment="Center" Name="Button" Width="200"
+                                    HorizontalContentAlignment="Center" FontSize="15">
+                                Button
+                            </Button>
+                            <Button HorizontalAlignment="Center" Name="Indicator" Width="200"
+                                    HorizontalContentAlignment="Center" FontSize="15">
+                                Indicator
+                            </Button>
+                            <Button HorizontalAlignment="Center" Name="TemperatureTrend" Width="200"
+                                    HorizontalContentAlignment="Center" FontSize="15">
+                                Temperature Trend
+                            </Button>
+                            <Button HorizontalAlignment="Center" Name="TextBox" Width="200"
+                                    HorizontalContentAlignment="Center" FontSize="15">
+                                Text Box
+                            </Button>
+
+                            <Button HorizontalAlignment="Center" Name="Slider" Width="200"
+                                    HorizontalContentAlignment="Center" FontSize="15">
+                                Slider
+                            </Button>
+                            <Button HorizontalAlignment="Center" Name="DropdownList" Width="200"
+                                    HorizontalContentAlignment="Center" FontSize="15">
+                                Dropdown list
+                            </Button>
+                            <Button HorizontalAlignment="Center" Name="Numeric" Width="200"
+                                    HorizontalContentAlignment="Center" FontSize="15">
+                                Numeric UP Down
+                            </Button>
+                            <Button HorizontalAlignment="Center" Name="ComboBox" Width="200"
+                                    HorizontalContentAlignment="Center" FontSize="15">
+                                Combo Box
+                            </Button>
+                        </ListBox>
+                    </TabItem>
+                </TabControl>
+            </Grid>
+    
+</UserControl>

@@ -2,9 +2,9 @@
 
 namespace CustomHMIBuilder.Views;
 
-public partial class MainView : UserControl
+public partial class CanvasView : UserControl
 {
-    public MainView()
+    public CanvasView()
     {
         InitializeComponent();
     }
