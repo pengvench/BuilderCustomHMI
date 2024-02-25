@@ -1,5 +1,4 @@
 ﻿using System.Threading;
-using CustomHMIBuilder.ViewModels;
 using ReactiveUI;
 
 namespace CustomHMIBuilder.SplashScreen.ViewModel;

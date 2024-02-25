@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Threading;
 using System.Threading.Tasks;
 using Avalonia;
@@ -7,12 +6,11 @@ using Avalonia.Controls.ApplicationLifetimes;
 using Avalonia.Markup.Xaml;
 using CustomHMIBuilder.SplashScreen.View;
 using CustomHMIBuilder.SplashScreen.ViewModel;
-using CustomHMIBuilder.ViewModels;
 using CustomHMIBuilder.Views;
 
 namespace CustomHMIBuilder;
 
-public partial class App : Application
+public class App : Application
 {
     public override void Initialize()
     {
@@ -57,12 +55,9 @@ public partial class App : Application
                 return;
             }
 
-            var mainWindow = new MainWindow
-            {
-      
-            };
+            var mainWindow = new MainWindow();
 
-            Thread.Sleep(500); // Подождать немного перед закрытием Splash screen
+            Thread.Sleep(500); 
             desktop.MainWindow = mainWindow;
             mainWindow.Show();
             splashWindow.Close();
