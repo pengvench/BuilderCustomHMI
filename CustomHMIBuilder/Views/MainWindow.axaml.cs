@@ -9,9 +9,10 @@ public partial class MainWindow : Window
     public MainWindow()
     {
         InitializeComponent();
+        MainGrid = new Grid();
     }
     
-
+     
     private void Button_OnClick(object? sender, RoutedEventArgs e)
     {
         var button = (sender as Button)!;
@@ -19,14 +20,14 @@ public partial class MainWindow : Window
         {
             case "Editor":
             {
-                EditorView editorView = new EditorView();
+                var editorView = new EditorView();
                 MainGrid.Children.Clear();
                 MainGrid.Children.Add(editorView);
             }
                 break;
             case "Home":
             {
-                HomeView homeView = new HomeView();
+                var homeView = new HomeView();
                 MainGrid.Children.Clear();
                 MainGrid.Children.Add(homeView);
             }
