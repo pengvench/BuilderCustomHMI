@@ -4,7 +4,6 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:views="clr-namespace:CustomHMIBuilder.Views"
-        xmlns:view="clr-namespace:CustomHMIBuilder.Editor.View"
         mc:Ignorable="d"
         x:Class="CustomHMIBuilder.Views.MainWindow"
         Icon="/Assets/avalonia-logo.ico"
@@ -22,13 +21,25 @@
         <DockPanel Grid.Row="0">
             <Menu DockPanel.Dock="Left" Height="20">
                 <MenuItem Header="File" FontSize="12">
-                    <MenuItem Header="Open" FontSize="12" />
+                    <MenuItem Header="New" InputGesture="Ctrl+N" FontSize="12" />
+                    <MenuItem Header="Open" InputGesture="Ctrl+O" FontSize="12" />
                     <Separator />
-                    <MenuItem Header="Exit" FontSize="12" />
+                    <MenuItem Header="Export"  FontSize="12" />
+                    <Separator />
+                    <MenuItem Header="Save" InputGesture="Ctrl+S" FontSize="12" />
+                    <MenuItem Header="Save As" InputGesture="Ctrl+Shift+S" FontSize="12" />
+                    <Separator />
+                    <MenuItem Header="Exit" InputGesture="Alt+F4" FontSize="12" />
                 </MenuItem>
                 <MenuItem Header="Edit" FontSize="12">
+                    <Separator />
                     <MenuItem Header="Copy" FontSize="12" />
                     <MenuItem Header="Paste" FontSize="12" />
+                    <Separator />
+                    <MenuItem Header="Cancel" FontSize="12" />
+                </MenuItem>
+                <MenuItem Header="Help" FontSize="12">
+                    <MenuItem Header="About" FontSize="12" />
                 </MenuItem>
             </Menu>
             <TextBlock />
@@ -48,7 +59,7 @@
 
         <!-- Это короче основная область, где будет спавниться окно -->
         <Grid Grid.Row="2" Name="MainGrid" Background="#6d8392" >
-            <views:HomeView></views:HomeView>
+            <views:HomeView/>
         </Grid>
     </Grid>
 

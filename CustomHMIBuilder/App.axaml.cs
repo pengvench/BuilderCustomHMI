@@ -26,6 +26,7 @@ public class App : Application
 
             splashWindow.DataContext = splashViewModel;
             desktop.MainWindow = splashWindow;
+            
 
             var loadingMessages = new List<string>
             {
