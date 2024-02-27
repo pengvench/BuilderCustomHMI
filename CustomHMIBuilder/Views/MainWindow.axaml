@@ -53,7 +53,7 @@
             <Button Grid.Column="1" Name="Editor" Click="Button_OnClick" Content="Кострутор"
                     Background="Transparent" FontWeight="Medium" Margin="5" />
 
-            <Button Grid.Column="4" HorizontalAlignment="Right" Name="SaveProject" Content="Сохранить проект"
+            <Button Grid.Column="4" HorizontalAlignment="Right" Name="SaveProject" Content="Подключить устройство"
                     FontWeight="Medium" Margin="5" Background="LightSeaGreen" Foreground="White" />
         </Grid>
 

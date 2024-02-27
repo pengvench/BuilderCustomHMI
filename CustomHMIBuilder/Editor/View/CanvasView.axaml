@@ -18,11 +18,8 @@
         </VisualBrush>
     </UserControl.Resources>
     
-    <!--Этот грид отвечает за основную рабочую область пульта-->
-    <Grid>
         <!--Поле будующего пульта-->
         <Canvas Background="{DynamicResource TemplateGrid}" />
 
-    </Grid>
 
 </UserControl>
