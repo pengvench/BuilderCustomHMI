@@ -4,9 +4,9 @@ using System.Threading.Tasks;
 using Avalonia;
 using Avalonia.Controls.ApplicationLifetimes;
 using Avalonia.Markup.Xaml;
+using CustomHMIBuilder.MainWindows.Views;
 using CustomHMIBuilder.SplashScreen.View;
 using CustomHMIBuilder.SplashScreen.ViewModel;
-using CustomHMIBuilder.Views;
 
 namespace CustomHMIBuilder;
 

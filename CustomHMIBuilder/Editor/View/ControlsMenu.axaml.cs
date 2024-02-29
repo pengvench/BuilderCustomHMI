@@ -23,15 +23,8 @@ public partial class ControlsMenu : UserControl
     //
     //     switch (button.Name)
     //     {
-    //         case "BtnLabel": mainCanvas.AddElement<HmiLabel>(); break;
-    //         case "BtnButton": mainCanvas.AddElement<HmiButton>(); break;
-    //         case "BtnSlider": mainCanvas.AddElement<HmiSlider>(); break;
-    //         case "BtnDropdownList": mainCanvas.AddElement<HmiDropdownList>(); break;
-    //         case "BtnTextBox": mainCanvas.AddElement<HmiTextBox>(); break;
-    //         case "BtnNumeric": mainCanvas.AddElement<HmiNumeric>(); break;
-    //         case "BtnComboBox": mainCanvas.AddElement<HmiComboBox>(); break;
-    //         case "BtnTrend": mainCanvas.AddElement<HmiTrend>(); break;
-    //         case "BtnIndicator": mainCanvas.AddElement<HmiIndicator>(); break;
+    //         // case "BtnButton": mainCanvas.AddElement<HmiButton>(); break;
+    //         // case "BtnLabel": mainCanvas.AddElement<HmiTextBox>(); break;
     //     }
     // }
 }

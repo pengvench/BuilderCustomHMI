@@ -1,0 +1,35 @@
+﻿<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:widgets="clr-namespace:CustomHMIBuilder.Widgets"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             x:Class="CustomHMIBuilder.Widgets.View.HomeWidgetsView">
+
+    <Grid Name="HomeGrid">
+        <!--Это основной Grid который задает кол-во строчек-->
+        <Grid RowDefinitions="*,Auto">
+
+            <Grid Grid.Row="0" ColumnDefinitions="Auto,Auto,*">
+
+
+                <!--Этот грид отвечает за основную рабочую область пульта-->
+                <Grid Grid.Column="2">
+                    <widgets:WidgetCanvasView Height="550" Width="1000" />
+                </Grid>
+
+
+            </Grid>
+
+            <!-- Задница -->
+            <Grid Grid.Row="1" Background="LightSteelBlue" Height="40" ColumnDefinitions="*,Auto,*,Auto,*">
+
+                <Button Grid.Column="4" Click="WidgetsSettings_OnClick" Name="WidgetsSettings" Margin="5,0,0,0"
+                        Background="LightSeaGreen" Foreground="White"
+                        Content="Настроить окно" />
+            </Grid>
+        </Grid>
+    </Grid>
+
+
+</UserControl>

@@ -1,0 +1,40 @@
+﻿<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             xmlns:view="clr-namespace:CustomHMIBuilder.Widgets"
+             x:Class="CustomHMIBuilder.Widgets.View.HomeEditorView">
+
+    <Grid Name="HomeGrid">
+        <!--Это основной Grid который задает кол-во строчек-->
+        <Grid RowDefinitions="*,Auto">
+
+            <Grid Grid.Row="0" ColumnDefinitions="Auto,Auto,*">
+
+                <Button Grid.Column="0" Background="LightSeaGreen" Height="400" VerticalContentAlignment="Center" />
+
+                <!--Этот грид отвечает за левую панель списка элементов-->
+                <Grid Grid.Column="1" Name="WidgetPanel">
+                    <view:WidgetsList />
+                </Grid>
+
+                <!--Этот грид отвечает за основную рабочую область пульта-->
+                <Grid Grid.Column="2">
+                    <view:WidgetCanvasView Height="550" Width="1000" />
+                </Grid>
+
+
+            </Grid>
+
+            <!-- Задница -->
+            <Grid Grid.Row="1" Background="LightSteelBlue" Height="40" ColumnDefinitions="*,Auto,*,Auto,*">
+
+                <Button Grid.Column="4" Name="SaveWidgetsSettings" Click="SaveWidgetsSettings_OnClick" Margin="5,0,0,0"
+                        Background="LightSeaGreen" Foreground="White"
+                        Content="Сохранить расположение" />
+            </Grid>
+        </Grid>
+    </Grid>
+
+</UserControl>

@@ -14,26 +14,28 @@
 
         <TabControl Background="#d2e9f8" TabStripPlacement="Top" Width="270">
             <TabItem Header="Компоненты">
-                <ListBox Background="Transparent">
-                    <Button HorizontalAlignment="Center" Name="BtnLabel" Width="200"
-                            HorizontalContentAlignment="Center" FontSize="15" Content="Label" />
-                    <Button HorizontalAlignment="Center" Name="BtnButton" Width="200"
-                            HorizontalContentAlignment="Center" FontSize="15" Content="Button" />
-                    <Button HorizontalAlignment="Center" Name="BtnIndicator" Width="200"
-                            HorizontalContentAlignment="Center" FontSize="15" Content="Indicator" />
-                    <Button HorizontalAlignment="Center" Name="BtnTrend" Width="200"
-                            HorizontalContentAlignment="Center" FontSize="15" Content="Trend" />
-                    <Button HorizontalAlignment="Center" Name="BtnTextBox" Width="200"
-                            HorizontalContentAlignment="Center" FontSize="15" Content="Text Box" />
-                    <Button HorizontalAlignment="Center" Name="BtnSlider" Width="200"
-                            HorizontalContentAlignment="Center" FontSize="15" Content="Slider" />
-                    <Button HorizontalAlignment="Center" Name="BtnDropdownList" Width="200"
-                            HorizontalContentAlignment="Center" FontSize="15" Content="Dropdown list" />
-                    <Button HorizontalAlignment="Center" Name="BtnNumeric" Width="200"
-                            HorizontalContentAlignment="Center" FontSize="15" Content="Numeric UP Down" />
-                    <Button HorizontalAlignment="Center" Name="BtnComboBox" Width="200"
-                            HorizontalContentAlignment="Center" FontSize="15" Content="Combo Box" />
-                </ListBox>
+                <ScrollViewer FlowDirection="RightToLeft" VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Disabled">
+                    <ItemsControl >
+                        <Button HorizontalAlignment="Center" Name="BtnLabel" Width="200"
+                                HorizontalContentAlignment="Center" FontSize="15" Content="Label" />
+                        <Button HorizontalAlignment="Center" Name="BtnButton" Width="200"
+                                HorizontalContentAlignment="Center" FontSize="15" Content="Button" />
+                        <Button HorizontalAlignment="Center" Name="BtnIndicator" Width="200"
+                                HorizontalContentAlignment="Center" FontSize="15" Content="Indicator" />
+                        <Button HorizontalAlignment="Center" Name="BtnTrend" Width="200"
+                                HorizontalContentAlignment="Center" FontSize="15" Content="Trend" />
+                        <Button HorizontalAlignment="Center" Name="BtnTextBox" Width="200"
+                                HorizontalContentAlignment="Center" FontSize="15" Content="Text Box" />
+                        <Button HorizontalAlignment="Center" Name="BtnSlider" Width="200"
+                                HorizontalContentAlignment="Center" FontSize="15" Content="Slider" />
+                        <Button HorizontalAlignment="Center" Name="BtnDropdownList" Width="200"
+                                HorizontalContentAlignment="Center" FontSize="15" Content="Dropdown list" />
+                        <Button HorizontalAlignment="Center" Name="BtnNumeric" Width="200"
+                                HorizontalContentAlignment="Center" FontSize="15" Content="Numeric UP Down" />
+                        <Button HorizontalAlignment="Center" Name="BtnComboBox" Width="200"
+                                HorizontalContentAlignment="Center" FontSize="15" Content="Combo Box" />
+                    </ItemsControl>
+                </ScrollViewer>
             </TabItem>
         </TabControl>
     </Grid>

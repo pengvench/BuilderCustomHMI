@@ -3,15 +3,16 @@
         xmlns:vm="using:CustomHMIBuilder.ViewModels"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:views="clr-namespace:CustomHMIBuilder.Views"
+        xmlns:view="clr-namespace:CustomHMIBuilder.Widgets.View"
+        xmlns:viewModels="clr-namespace:CustomHMIBuilder.MainWindows.ViewModels"
         mc:Ignorable="d"
-        x:Class="CustomHMIBuilder.Views.MainWindow"
+        x:Class="CustomHMIBuilder.MainWindows.Views.MainWindow"
         Icon="/Assets/avalonia-logo.ico"
         WindowStartupLocation="CenterScreen"
         WindowState="Maximized"
         MinWidth="1200" MinHeight="720"
         Title="BuilderCustomHMI"
-        x:DataType="vm:MainWindowViewModel">
+        x:DataType="viewModels:MainWindowViewModel">
     
     
     <!--Это основной Grid который задает кол-во строчек-->
@@ -53,13 +54,13 @@
             <Button Grid.Column="1" Name="Editor" Click="Button_OnClick" Content="Кострутор"
                     Background="Transparent" FontWeight="Medium" Margin="5" />
 
-            <Button Grid.Column="4" HorizontalAlignment="Right" Name="SaveProject" Content="Подключить устройство"
+            <Button Grid.Column="4" HorizontalAlignment="Right" Name="ConnectDevice" Click="ConnectDevice_OnClick" Content="Подключить устройство"
                     FontWeight="Medium" Margin="5" Background="LightSeaGreen" Foreground="White" />
         </Grid>
 
         <!-- Это короче основная область, где будет спавниться окно -->
         <Grid Grid.Row="2" Name="MainGrid" Background="#6d8392" >
-            <views:HomeView/>
+            <view:HomeWidgetsView/>
         </Grid>
     </Grid>
 

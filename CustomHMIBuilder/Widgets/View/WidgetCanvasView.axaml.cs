@@ -2,11 +2,11 @@
 using Avalonia.Controls;
 using Avalonia.Markup.Xaml;
 
-namespace CustomHMIBuilder.Views;
+namespace CustomHMIBuilder.Widgets;
 
-public partial class HomeView : UserControl
+public partial class WidgetCanvasView : UserControl
 {
-    public HomeView()
+    public WidgetCanvasView()
     {
         InitializeComponent();
     }

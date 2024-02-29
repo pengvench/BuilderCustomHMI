@@ -1,0 +1,32 @@
+﻿<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d" 
+             x:Class="CustomHMIBuilder.Widgets.WidgetsList">
+       <!--Этот грид отвечает за левую панель списка элементов-->
+    <Grid Name="NavPanel">
+
+        <!--Содержимое левого меню-->
+
+        <TabControl Background="#d2e9f8" TabStripPlacement="Top" Width="300">
+            <TabItem Header="Виджеты">
+                    <TreeView FontSize="15">
+                        <TreeViewItem Header="Стандартные виджеты" IsExpanded="True" Background="LightSeaGreen"  CornerRadius="5">
+                            <Button Content="Температурный График" Name="TemperatureGraph" Background="Transparent"/>
+                            <Button Content="Управления Температурой" Name="TemperatureControl" Background="Transparent"/>
+                            <Button Content="Энергопотребление" Name="PowerConsumption" Background="Transparent"/>
+                            <Button Content="Обороты Двигателя" Name="EngineRPM" Background="Transparent"/>
+                            <Button Content="Состояние Системы" Name="SystemStatus" Background="Transparent"/>
+                            <Button Content="Давление в Системе" Name="PressureGauge" Background="Transparent"/>
+                        </TreeViewItem>
+                        <TreeViewItem Header="Ваши виджеты" Background="LightSeaGreen" CornerRadius="5">
+                           
+                        </TreeViewItem>
+
+                    </TreeView>
+
+            </TabItem>
+        </TabControl>
+    </Grid>
+</UserControl>

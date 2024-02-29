@@ -1,8 +1,11 @@
-﻿using ReactiveUI;
+﻿using System.Text;
+using Avalonia.Controls;
+using CustomHMIBuilder.Editor.View;
+using Size = System.Drawing.Size;
 
-namespace CustomHMIBuilder.Editor.ViewModel;
+namespace CustomHMIBuilder;
 
 public class ControlsVM
 {
-
+    
 }

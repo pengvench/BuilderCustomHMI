@@ -1,0 +1,26 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:viewModel="clr-namespace:CustomHMIBuilder.Editor.ViewModel"
+             mc:Ignorable="d"
+             x:Class="CustomHMIBuilder.Editor.View.EditorCanvasView"
+             x:DataType="viewModel:CanvasVM">
+
+    <UserControl.Resources>
+        <!-- Создание ресурса типа VisualBrush с названием "TemplateGrid". -->
+        <VisualBrush x:Key="TemplateGrid" TileMode="Tile" SourceRect="0,0,40,40" DestinationRect="0,0,40,40">
+            <VisualBrush.Visual>
+                <!-- Визуальное представление кисти содержит путь для отображения визуального элемента в виде сетки. -->
+                <Path
+                    Data="M 0,0 L 40,0 M 0,10 L 40,10 M 0,20 L 40,20 M 0,30 L 40,30 M 0,40 L 40,40 M 0,0 L 0,40 M 10,0 L 10,40 M 20,0 L 20,40 M 30,0 L 30,40 M 40,0 L 40,40"
+                    Stroke="#FFF5F5F5" StrokeThickness="0.5" />
+            </VisualBrush.Visual>
+        </VisualBrush>
+    </UserControl.Resources>
+    <Border BorderBrush="LightSeaGreen" BorderThickness="2">
+        <!--Поле будующего пульта-->
+        <Canvas Name="EditorCanvas" Background="{DynamicResource TemplateGrid}" />
+    </Border>
+
+</UserControl>

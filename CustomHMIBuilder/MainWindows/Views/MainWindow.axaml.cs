@@ -1,8 +1,10 @@
 ﻿using Avalonia.Controls;
 using Avalonia.Interactivity;
+using Avalonia.Markup.Xaml;
 using CustomHMIBuilder.Editor.View;
+using CustomHMIBuilder.Widgets.View;
 
-namespace CustomHMIBuilder.Views;
+namespace CustomHMIBuilder.MainWindows.Views;
 
 public partial class MainWindow : Window
 {
@@ -26,13 +28,20 @@ public partial class MainWindow : Window
                 break;
             case "Home":
             {
-                var homeView = new HomeView();
+                var homeView = new HomeWidgetsView();
                 MainGrid.Children.Clear();
                 MainGrid.Children.Add(homeView);
             }
                 break;
         }
     }
-    
+
+    private void ConnectDevice_OnClick(object? sender, RoutedEventArgs e)
+    {
+        Window deviceConnectionWindow = new DeviсeConnection();
+
+        // Открываем новое окно
+        deviceConnectionWindow.Show();
+    }
 }
     

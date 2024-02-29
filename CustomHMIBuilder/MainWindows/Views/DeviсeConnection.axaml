@@ -1,0 +1,54 @@
+﻿<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" 
+        Width="800" Height="450"
+        x:Class="CustomHMIBuilder.MainWindows.Views.DeviсeConnection"
+        WindowStartupLocation="CenterScreen"
+        CanResize="False"
+        Topmost="True"
+        Title="DeviсeConnection">
+   
+    <Grid RowDefinitions="Auto,*,Auto,Auto" >
+       <Grid Grid.Row="0" ColumnDefinitions="Auto,Auto,Auto" HorizontalAlignment="Center" >
+           <WrapPanel Grid.Column="0" >
+               <Label Content="Устройство" VerticalAlignment="Center"/>
+               <ComboBox/>
+               <Button Content="+"/>
+               <Button Content="del"/>
+               <Button Content="ref"/>
+           </WrapPanel>
+           <WrapPanel Grid.Column="1">
+               <Label Content="Интерфейс" VerticalAlignment="Center"/>
+               <ComboBox/>
+           </WrapPanel>
+           <WrapPanel Grid.Column="2">
+               <Label Content="ID" VerticalAlignment="Center"/>
+               <NumericUpDown AllowSpin="True" ShowButtonSpinner="False"/>
+           </WrapPanel>
+       </Grid>
+        <Grid Grid.Row="1" ColumnDefinitions="Auto,Auto,Auto">
+            <WrapPanel Grid.Column="0">
+                
+            </WrapPanel>
+        </Grid>
+       
+        <StackPanel Grid.Row="2" >
+            
+           
+        </StackPanel>
+        
+        <Grid Grid.Row="3" Background="LightSteelBlue" Height="40" ColumnDefinitions="*,Auto,*,Auto,*">
+
+            <Button Grid.Column="1"  Name="ApplyDevice" Margin="5,0,0,0"
+                    Background="LightSeaGreen" Foreground="White"
+                    Content="Применить" />
+            <Button Grid.Column="3" Click="CancelConnection_OnClick" Name="CancelConnection" Margin="5,0,0,0"
+                    Background="LightSeaGreen" Foreground="White"
+                    Content="Отмена" />
+        </Grid>
+   </Grid>
+
+
+</Window>

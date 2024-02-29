@@ -26,7 +26,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Compile Update="Editor\View\CanvasView.axaml.cs">
+    <Compile Update="Editor\View\EditorCanvasView.axaml.cs">
       <DependentUpon>CanvasView.axaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
@@ -38,5 +38,32 @@
       <DependentUpon>Splash.axaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="Widgets\View\HomeEditorView.axaml.cs">
+      <DependentUpon>HomeWidgetsView.axaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Widgets\View\WidgetsList.axaml.cs">
+      <DependentUpon>WidgetsList.axaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Widgets\View\WidgetCanvasView.axaml.cs">
+      <DependentUpon>WidgetCanvasView.axaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="MainWindows\" />
+    <Folder Include="Widgets\ViewModels\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <UpToDateCheckInput Remove="Views\MainWindow.axaml" />
+    <UpToDateCheckInput Remove="Style\MainWindowStyle.axaml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <AdditionalFiles Include="MainWindows\Style\MainWindowStyle.axaml" />
+    <AdditionalFiles Include="MainWindows\Views\MainWindow.axaml" />
   </ItemGroup>
 </Project>
