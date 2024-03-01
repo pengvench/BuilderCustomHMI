@@ -16,10 +16,8 @@ public partial class DeviсeConnection : Window
 
     private void CancelConnection_OnClick(object? sender, RoutedEventArgs e)
     {
-        if (sender is InputElement inputElement)
-        {
-            Window currentWindow = inputElement.GetVisualRoot() as Window;  
-            currentWindow?.Hide(); 
-        }
+        if (sender is not InputElement inputElement) return;
+        var currentWindow = inputElement.GetVisualRoot() as Window;  
+        currentWindow?.Hide();
     }
 }
