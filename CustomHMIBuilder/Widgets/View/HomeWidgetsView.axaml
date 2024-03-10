@@ -10,23 +10,21 @@
         <!--Это основной Grid который задает кол-во строчек-->
         <Grid RowDefinitions="*,Auto">
 
-            <Grid Grid.Row="0" ColumnDefinitions="Auto,Auto,*">
-
-
-                <!--Этот грид отвечает за основную рабочую область пульта-->
-                <Grid Grid.Column="2">
-                    <widgets:WidgetCanvasView Height="550" Width="1000" />
+            <Grid Grid.Row="0" ColumnDefinitions="Auto,*">
+                <!-- Грид где спаниться widgetlist -->
+                <Grid Name="WidgetListGrid" Grid.Column="0" IsVisible="False">
+                    <widgets:WidgetsList/>
                 </Grid>
-
-
+                <!--Этот грид отвечает за основную рабочую область пульта-->
+                <Grid Grid.Column="1">
+                    <widgets:WidgetCanvasView />
+                </Grid>
+                
             </Grid>
 
             <!-- Задница -->
-            <Grid Grid.Row="1" Background="LightSteelBlue" Height="40" ColumnDefinitions="*,Auto,*,Auto,*">
-
-                <Button Grid.Column="4" Click="WidgetsSettings_OnClick" Name="WidgetsSettings" Margin="5,0,0,0"
-                        Background="LightSeaGreen" Foreground="White"
-                        Content="Настроить окно" />
+            <Grid Grid.Row="1" Name="Zad" ColumnDefinitions="*,Auto,*,Auto,*">
+                <Button Grid.Column="4" Click="WidgetsSettings_OnClick" Name="WidgetsSettings" />
             </Grid>
         </Grid>
     </Grid>

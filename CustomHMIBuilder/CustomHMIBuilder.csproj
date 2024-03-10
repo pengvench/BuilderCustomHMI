@@ -38,10 +38,6 @@
       <DependentUpon>Splash.axaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="Widgets\View\HomeEditorView.axaml.cs">
-      <DependentUpon>HomeWidgetsView.axaml</DependentUpon>
-      <SubType>Code</SubType>
-    </Compile>
     <Compile Update="Widgets\View\WidgetsList.axaml.cs">
       <DependentUpon>WidgetsList.axaml</DependentUpon>
       <SubType>Code</SubType>
@@ -63,7 +59,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <AdditionalFiles Include="MainWindows\Style\MainWindowStyle.axaml" />
     <AdditionalFiles Include="MainWindows\Views\MainWindow.axaml" />
   </ItemGroup>
 </Project>

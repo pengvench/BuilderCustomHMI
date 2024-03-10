@@ -156,8 +156,8 @@
             </Border>
 
             <!-- Это задница -->
-            <Border Grid.Row="3" CornerRadius="5" Background="LightSteelBlue">
-                <Grid Height="40" ColumnDefinitions="*,Auto,*,Auto,*">
+            <Border Grid.Row="3" >
+                <Grid Name="Zad" ColumnDefinitions="*,Auto,*,Auto,*">
 
                     <Button Grid.Column="1" Name="ApplyDevice" Margin="5,0,0,0"
                             Background="LightSeaGreen" Foreground="White"

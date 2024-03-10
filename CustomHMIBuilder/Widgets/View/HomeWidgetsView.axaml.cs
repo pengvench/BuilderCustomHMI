@@ -14,8 +14,16 @@ public partial class HomeWidgetsView : UserControl
 
     private void WidgetsSettings_OnClick(object? sender, RoutedEventArgs e)
     {
-        var homeEditorView = new HomeEditorView();
-        HomeGrid.Children.Clear();
-        HomeGrid.Children.Add(homeEditorView);
+        var button = (Button)sender!;
+        if (button?.Content?.ToString() == "Настроить окно")
+        {
+            WidgetListGrid.IsVisible = true;
+            button.Content = "Сохранить";
+        }
+        else
+        {
+            WidgetListGrid.IsVisible = false;
+            if (button != null) button.Content = "Настроить окно";
+        }
     }
 }

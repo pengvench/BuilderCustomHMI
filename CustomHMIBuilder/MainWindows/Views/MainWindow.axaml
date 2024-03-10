@@ -1,6 +1,5 @@
 <Window xmlns="https://github.com/avaloniaui"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        xmlns:vm="using:CustomHMIBuilder.ViewModels"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:view="clr-namespace:CustomHMIBuilder.Widgets.View"
@@ -14,52 +13,49 @@
         Title="BuilderCustomHMI"
         x:DataType="viewModels:MainWindowViewModel">
     
-    
     <!--Это основной Grid который задает кол-во строчек-->
     <Grid RowDefinitions="Auto,Auto,*,Auto">
         <!-- Хедер где будет какая-то кака-->
 
         <DockPanel Grid.Row="0">
-            <Menu DockPanel.Dock="Left" Height="20">
+            <Menu DockPanel.Dock="Left" >
                 <MenuItem Header="File" FontSize="12">
-                    <MenuItem Header="New" InputGesture="Ctrl+N" FontSize="12" />
-                    <MenuItem Header="Open" InputGesture="Ctrl+O" FontSize="12" />
+                    <MenuItem Header="New" InputGesture="Ctrl+N" />
+                    <MenuItem Header="Open" InputGesture="Ctrl+O" />
                     <Separator />
-                    <MenuItem Header="Export"  FontSize="12" />
+                    <MenuItem Header="Export" />
                     <Separator />
-                    <MenuItem Header="Save" InputGesture="Ctrl+S" FontSize="12" />
-                    <MenuItem Header="Save As" InputGesture="Ctrl+Shift+S" FontSize="12" />
+                    <MenuItem Header="Save" InputGesture="Ctrl+S" />
+                    <MenuItem Header="Save As" InputGesture="Ctrl+Shift+S"/>
                     <Separator />
-                    <MenuItem Header="Exit" InputGesture="Alt+F4" FontSize="12" />
+                    <MenuItem Header="Exit" InputGesture="Alt+F4" />
                 </MenuItem>
                 <MenuItem Header="Edit" FontSize="12">
                     <Separator />
-                    <MenuItem Header="Copy" FontSize="12" />
-                    <MenuItem Header="Paste" FontSize="12" />
+                    <MenuItem Header="Copy" />
+                    <MenuItem Header="Paste" />
                     <Separator />
-                    <MenuItem Header="Cancel" FontSize="12" />
+                    <MenuItem Header="Cancel"/>
                 </MenuItem>
-                <MenuItem Header="Help" FontSize="12">
-                    <MenuItem Header="About" FontSize="12" />
+                <MenuItem Header="Help">
+                    <MenuItem Header="About" />
                 </MenuItem>
             </Menu>
             <TextBlock />
         </DockPanel>
 
         <!-- Второй хедер, где находюца панели "Конструктор" и "Пульт"-->
-        <Grid Grid.Row="1" Height="40" Background="LightSteelBlue" ColumnDefinitions="Auto,Auto,Auto,*,Auto">
+        <Grid Grid.Row="1" Name="Header" ColumnDefinitions="Auto,Auto,Auto,*,Auto">
             <!--панель левых кнопок-->
             <Button Grid.Column="0" Name="Home" Click="Button_OnClick" Content="Главная" Background="Transparent" FontWeight="Medium"
                     Margin="5" />
             <Button Grid.Column="1" Name="Editor" Click="Button_OnClick" Content="Кострутор"
                     Background="Transparent" FontWeight="Medium" Margin="5" />
-
-            <Button Grid.Column="4" HorizontalAlignment="Right" Name="ConnectDevice" Click="ConnectDevice_OnClick" Content="Подключить устройство"
-                    FontWeight="Medium" Margin="5" Background="LightSeaGreen" Foreground="White" />
+            <Button Grid.Column="4" Name="ConnectDevice" Click="ConnectDevice_OnClick" />
         </Grid>
 
         <!-- Это короче основная область, где будет спавниться окно -->
-        <Grid Grid.Row="2" Name="MainGrid" Background="#6d8392" >
+        <Grid Grid.Row="2" Name="MainGrid">
             <view:HomeWidgetsView/>
         </Grid>
     </Grid>

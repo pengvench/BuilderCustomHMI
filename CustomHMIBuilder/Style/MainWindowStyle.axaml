@@ -1,0 +1,41 @@
+﻿<Styles xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+        
+        <Style Selector="Menu">
+                <Setter Property="Height" Value="20"/>
+        </Style>
+        <Style Selector="MenuItem">
+                <Setter Property="FontSize" Value="12"/>
+        </Style>
+        
+        <Style Selector="Grid#Header">
+                <Setter Property="Background" Value="#8a80ff"/>
+                <Setter Property="Height" Value="40"/>
+             
+        </Style>
+        
+        <Style Selector="Button#ConnectDevice">
+                <Setter Property="HorizontalAlignment"  Value="Right"/>
+                <Setter Property="Content" Value="Подключить устройство" />
+                <Setter Property="FontWeight" Value="Medium"/>
+                <Setter Property="Margin" Value="5"/>
+                <Setter Property="Background" Value="LightSeaGreen"/>
+                <Setter Property="Foreground" Value="White"/>
+        </Style>
+        
+        <Style Selector="Grid#MainGrid">
+                <Setter Property="Background" Value="#3f334b"/>
+        </Style>
+        
+        <Style Selector="Grid#Zad">
+                <Setter Property="Height" Value="40"/>
+                <Setter Property="Background" Value="#8a80ff"/>
+        </Style>
+        
+        <Style Selector="Button#WidgetsSettings">
+                <Setter Property="Foreground" Value="White"/>
+                <Setter Property="Content" Value="Настроить окно"/>
+                <Setter Property="Background" Value="LightSeaGreen"/>
+                <Setter Property="Margin" Value="5,0,0,0"/> 
+        </Style>
+</Styles>

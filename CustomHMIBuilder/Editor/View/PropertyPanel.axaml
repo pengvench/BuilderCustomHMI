@@ -13,7 +13,7 @@
                     <TabItem Name="Edit" Header="Свойства" FontSize="20">
                         <StackPanel Margin="5">
                             <!-- Это короче грид с именем -->
-                            <Grid ColumnDefinitions="Auto,*">
+                            <Grid>
                                 <Label Grid.Column="0" FontSize="20" Content="Name - " VerticalAlignment="Center" />
                                 <TextBox Grid.Column="1" Name="TxtName" />
                             </Grid>
