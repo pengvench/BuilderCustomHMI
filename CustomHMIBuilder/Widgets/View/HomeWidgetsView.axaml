@@ -20,7 +20,7 @@
                     <Border BorderBrush="#53EABF" BorderThickness="2">
                         <!--Поле будующего пульта-->
                         
-                        <widgets:TempControl/>
+                        <widgets:Pressure/>
                     </Border>
                 </Grid>
                 

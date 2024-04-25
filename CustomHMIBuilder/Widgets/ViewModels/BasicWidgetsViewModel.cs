@@ -5,12 +5,16 @@ using LiveChartsCore.SkiaSharpView;
 using LiveChartsCore.SkiaSharpView.Painting;
 using LiveChartsCore.SkiaSharpView.VisualElements;
 using LiveChartsCore.SkiaSharpView.Extensions;
+using LiveChartsCore.VisualElements;
+using LiveChartsCore.Defaults;
+using LiveChartsCore.SkiaSharpView.Drawing;
 using ReactiveUI;
 using SkiaSharp;
+using System;
 
 namespace CustomHMIBuilder.Widgets.ViewModels;
 
-public class TemperatureViewModel : ReactiveObject
+public class BasicWidgetsViewModel : ReactiveObject
 {
     // Это отвечает за температурный график
     public ISeries[] TempgraphSeries { get; set; } =
@@ -55,6 +59,58 @@ public class TemperatureViewModel : ReactiveObject
         new()
         {
             Text = "Управление температурой",
+            TextSize = 25,
+            Padding = new LiveChartsCore.Drawing.Padding(15),
+            Paint = new SolidColorPaint(SKColors.DarkSlateGray)
+        };
+    
+    // Это отвечает за давление в системе
+    
+    public BasicWidgetsViewModel()
+    {
+        var sectionsOuter = 130;
+        var sectionsWidth = 20;
+        
+        Needle = new NeedleVisual
+        {
+            Value = 45
+        };
+        
+        PressureSeries = GaugeGenerator.BuildAngularGaugeSections(
+            new GaugeItem(60, s => SetStyle(sectionsOuter, sectionsWidth,  s)),
+            new GaugeItem(30,  s => SetStyle(sectionsOuter, sectionsWidth, s)),
+            new GaugeItem(10, s => SetStyle(sectionsOuter, sectionsWidth, s)));
+
+        PressureVisualElements = new VisualElement<SkiaSharpDrawingContext>[]
+        {
+            new AngularTicksVisual
+            {
+                LabelsSize = 16,
+                LabelsOuterOffset = 15,
+                OuterOffset = 65,
+                TicksLength = 20
+            },
+            Needle
+        };
+    }
+
+    public IEnumerable<ISeries> PressureSeries { get; set; }
+
+    public IEnumerable<VisualElement<SkiaSharpDrawingContext>> PressureVisualElements { get; set; }
+    
+    public NeedleVisual Needle { get; set; }
+
+    private static void SetStyle(
+        double sectionsOuter, double sectionsWidth, PieSeries<ObservableValue> series)
+    {
+        series.OuterRadiusOffset = sectionsOuter;
+        series.MaxRadialColumnWidth = sectionsWidth;
+    }
+    
+    public LabelVisual PressureLabel { get; set; } =
+        new()
+        {
+            Text = "Давление в системе",
             TextSize = 25,
             Padding = new LiveChartsCore.Drawing.Padding(15),
             Paint = new SolidColorPaint(SKColors.DarkSlateGray)

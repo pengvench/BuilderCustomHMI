@@ -7,10 +7,10 @@
              mc:Ignorable="d" 
              MaxHeight="500" MaxWidth="700"
              x:Class="CustomHMIBuilder.Widgets.Tempgraph"
-             x:DataType="viewModels:TemperatureViewModel">
+             x:DataType="viewModels:BasicWidgetsViewModel">
     
     <UserControl.DataContext>
-        <viewModels:TemperatureViewModel/>
+        <viewModels:BasicWidgetsViewModel/>
     </UserControl.DataContext>
    
     <Border CornerRadius="25" Background="White"> 

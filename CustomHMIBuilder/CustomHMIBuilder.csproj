@@ -50,6 +50,10 @@
       <DependentUpon>Tempgraph.axaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="Widgets\View\Pressure.axaml.cs">
+      <DependentUpon>Pressure.axaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
   </ItemGroup>
 
   <ItemGroup>

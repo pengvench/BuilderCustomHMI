@@ -6,7 +6,7 @@
              xmlns:viewModels="clr-namespace:CustomHMIBuilder.Widgets.ViewModels"
              MaxHeight="500" MaxWidth="700"
              mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
-             x:Class="CustomHMIBuilder.Widgets.TempControl"
+             x:Class="CustomHMIBuilder.Widgets.Pressure"
              x:DataType="viewModels:BasicWidgetsViewModel">
     
     <UserControl.DataContext>
@@ -16,14 +16,15 @@
     <Border CornerRadius="25" Background="White"> 
         <Grid ColumnDefinitions="*, Auto">
         <lvc:PieChart
-            Grid.Row="0" Grid.Column="0"
-            Title="{Binding TempControlLabel}"
-            MinWidth="300" MinHeight="250"
-            Series="{Binding TempControlSeries}"
+            Grid.Column="0"
+            Title="{Binding PressureLabel}"
+            Series="{Binding PressureSeries}"
+            VisualElements="{Binding PressureVisualElements}"
             InitialRotation="-225"
             MaxAngle="270"
             MinValue="0"
             MaxValue="100">
+
         </lvc:PieChart>
             
             <StackPanel Grid.Column="1" Spacing="20"  VerticalAlignment="Center" Margin="20">
