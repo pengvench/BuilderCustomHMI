@@ -51,7 +51,7 @@
                     Margin="5" />
             <Button Grid.Column="1" Name="Editor" Click="Button_OnClick" Content="Кострутор"
                     Background="Transparent" FontWeight="Medium" Margin="5" />
-            <Button Grid.Column="4" Name="ConnectDevice" Click="ConnectDevice_OnClick" />
+            <Button Grid.Column="4" Classes="Accent" Name="ConnectDevice" Click="ConnectDevice_OnClick" />
         </Grid>
 
         <!-- Это короче основная область, где будет спавниться окно -->

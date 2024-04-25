@@ -1,6 +1,7 @@
 ﻿<Styles xmlns="https://github.com/avaloniaui"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
         
+        <!-- Стили отвечающие за глав меню -->
         <Style Selector="Menu">
                 <Setter Property="Height" Value="20"/>
         </Style>
@@ -11,7 +12,6 @@
         <Style Selector="Grid#Header">
                 <Setter Property="Background" Value="#8a80ff"/>
                 <Setter Property="Height" Value="40"/>
-             
         </Style>
         
         <Style Selector="Button#ConnectDevice">
@@ -19,23 +19,26 @@
                 <Setter Property="Content" Value="Подключить устройство" />
                 <Setter Property="FontWeight" Value="Medium"/>
                 <Setter Property="Margin" Value="5"/>
-                <Setter Property="Background" Value="LightSeaGreen"/>
+        </Style>
+        
+        <!-- Стили отвечающие за середину главной страницы -->
+        <Style Selector="Grid#MainGrid">
+                <Setter Property="Background" Value="#34495e"/>
+        </Style>
+        
+        <Style Selector="Button.Accent">
+                <Setter Property="Background" Value="#2ecc71" />
                 <Setter Property="Foreground" Value="White"/>
         </Style>
         
-        <Style Selector="Grid#MainGrid">
-                <Setter Property="Background" Value="#3f334b"/>
-        </Style>
-        
+        <!-- Стили отвечающие за футтер -->
         <Style Selector="Grid#Zad">
                 <Setter Property="Height" Value="40"/>
-                <Setter Property="Background" Value="#8a80ff"/>
+                <Setter Property="Background" Value="LightSteelBlue"/>
         </Style>
         
         <Style Selector="Button#WidgetsSettings">
-                <Setter Property="Foreground" Value="White"/>
                 <Setter Property="Content" Value="Настроить окно"/>
-                <Setter Property="Background" Value="LightSeaGreen"/>
                 <Setter Property="Margin" Value="5,0,0,0"/> 
         </Style>
 </Styles>

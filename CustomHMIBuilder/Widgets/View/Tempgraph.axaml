@@ -1,0 +1,27 @@
+﻿<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:lvc="using:LiveChartsCore.SkiaSharpView.Avalonia"
+             xmlns:viewModels="clr-namespace:CustomHMIBuilder.Widgets.ViewModels"
+             mc:Ignorable="d" 
+             MaxHeight="500" MaxWidth="700"
+             x:Class="CustomHMIBuilder.Widgets.Tempgraph"
+             x:DataType="viewModels:TempgraphViewModel">
+    
+    <UserControl.DataContext>
+        <viewModels:TempgraphViewModel/>
+    </UserControl.DataContext>
+   
+    <Border CornerRadius="25" Background="White"> 
+        
+        <lvc:CartesianChart 
+            MinWidth="300" MinHeight="250"
+                Title="{Binding Title}"
+                Series="{Binding Series}"
+                ZoomMode="X">
+        </lvc:CartesianChart>
+        
+    </Border>
+    
+</UserControl>

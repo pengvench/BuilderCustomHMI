@@ -18,7 +18,7 @@
             </VisualBrush.Visual>
         </VisualBrush>
     </UserControl.Resources>
-    <Border BorderBrush="LightSeaGreen" BorderThickness="2">
+    <Border BorderBrush="#2ecc71" BorderThickness="2">
         <!--Поле будующего пульта-->
         <Canvas Name="EditorCanvas" Background="{DynamicResource TemplateGrid}" />
     </Border>

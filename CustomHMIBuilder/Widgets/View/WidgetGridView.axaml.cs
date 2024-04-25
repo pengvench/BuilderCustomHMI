@@ -4,9 +4,9 @@ using Avalonia.Markup.Xaml;
 
 namespace CustomHMIBuilder.Widgets;
 
-public partial class WidgetCanvasView : UserControl
+public partial class WidgetGridView : UserControl
 {
-    public WidgetCanvasView()
+    public WidgetGridView()
     {
         InitializeComponent();
     }
