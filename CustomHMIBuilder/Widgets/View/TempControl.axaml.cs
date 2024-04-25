@@ -4,9 +4,9 @@ using Avalonia.Markup.Xaml;
 
 namespace CustomHMIBuilder.Widgets;
 
-public partial class WidgetGridView : UserControl
+public partial class TempControl : UserControl
 {
-    public WidgetGridView()
+    public TempControl()
     {
         InitializeComponent();
     }

@@ -3,7 +3,6 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:widgets="clr-namespace:CustomHMIBuilder.Widgets"
-
              mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
              x:Class="CustomHMIBuilder.Widgets.View.HomeWidgetsView">
 
@@ -18,7 +17,11 @@
                 </Grid>
                 <!--Этот грид отвечает за основную рабочую область пульта-->
                 <Grid Grid.Column="1">
-                    <widgets:Tempgraph />
+                    <Border BorderBrush="#53EABF" BorderThickness="2">
+                        <!--Поле будующего пульта-->
+                        
+                        <widgets:TempControl/>
+                    </Border>
                 </Grid>
                 
             </Grid>

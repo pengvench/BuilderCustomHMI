@@ -7,18 +7,18 @@
              mc:Ignorable="d" 
              MaxHeight="500" MaxWidth="700"
              x:Class="CustomHMIBuilder.Widgets.Tempgraph"
-             x:DataType="viewModels:TempgraphViewModel">
+             x:DataType="viewModels:TemperatureViewModel">
     
     <UserControl.DataContext>
-        <viewModels:TempgraphViewModel/>
+        <viewModels:TemperatureViewModel/>
     </UserControl.DataContext>
    
     <Border CornerRadius="25" Background="White"> 
         
         <lvc:CartesianChart 
             MinWidth="300" MinHeight="250"
-                Title="{Binding Title}"
-                Series="{Binding Series}"
+                Title="{Binding TempgraphLabel}"
+                Series="{Binding TempgraphSeries}"
                 ZoomMode="X">
         </lvc:CartesianChart>
         

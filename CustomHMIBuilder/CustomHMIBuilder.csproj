@@ -46,10 +46,6 @@
       <DependentUpon>WidgetsList.axaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="Widgets\View\WidgetGridView.axaml.cs">
-      <DependentUpon>WidgetCanvasView.axaml</DependentUpon>
-      <SubType>Code</SubType>
-    </Compile>
     <Compile Update="Widgets\View\Tempgraph.axaml.cs">
       <DependentUpon>Tempgraph.axaml</DependentUpon>
       <SubType>Code</SubType>
