@@ -1,4 +1,5 @@
-﻿using Avalonia.Controls;
+﻿using System;
+using Avalonia.Controls;
 using Avalonia.Interactivity;
 using Avalonia.Markup.Xaml;
 using CustomHMIBuilder.Editor.View;
@@ -36,12 +37,27 @@ public partial class MainWindow : Window
         }
     }
 
+    private Window? _deviceConnectionWindow;
+    
     private void ConnectDevice_OnClick(object? sender, RoutedEventArgs e)
     {
-        Window deviceConnectionWindow = new DeviсeConnection();
+        if (_deviceConnectionWindow == null)
+        {
+            _deviceConnectionWindow = new DeviсeConnection();
+            _deviceConnectionWindow.Closed += DeviceConnectionWindow_Closed;
+            _deviceConnectionWindow.Show();
+        }
+        else
+        {
+            _deviceConnectionWindow.Show();
+        }
 
-        // Открываем новое окно
-        deviceConnectionWindow.Show();
     }
+    
+    private void DeviceConnectionWindow_Closed(object sender, EventArgs e)
+    {
+        _deviceConnectionWindow = null;
+    }
+    
 }
     

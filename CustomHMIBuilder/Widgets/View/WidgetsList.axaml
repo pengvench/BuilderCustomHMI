@@ -11,6 +11,7 @@
 
         <TabControl Background="#d2e9f8" TabStripPlacement="Top" Width="300">
             <TabItem Header="Виджеты">
+                <ScrollViewer>
                     <TreeView FontSize="15">
                         <TreeViewItem Header="Стандартные виджеты" IsExpanded="True" Background="LightSeaGreen"  CornerRadius="5">
                             <Button Content="Температурный График" Name="TemperatureGraph" Background="Transparent"/>
@@ -20,9 +21,13 @@
                             <Button Content="Состояние Системы" Name="SystemStatus" Background="Transparent"/>
                             <Button Content="Давление в Системе" Name="PressureGauge" Background="Transparent"/>
                         </TreeViewItem>
+                        
                         <TreeViewItem Header="Ваши виджеты" Background="LightSeaGreen" CornerRadius="5">
+                            
                         </TreeViewItem>
+                        
                     </TreeView>
+                </ScrollViewer>
             </TabItem>
         </TabControl>
     </Grid>
