@@ -12,7 +12,7 @@
 
         <!--Содержимое левого меню-->
 
-        <TabControl Background="#d2e9f8" TabStripPlacement="Top" Width="270">
+        <TabControl Background="#2c3038" TabStripPlacement="Top" Width="270">
             <TabItem Header="Компоненты">
                 <ScrollViewer FlowDirection="RightToLeft" VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Disabled">
                     <ItemsControl >

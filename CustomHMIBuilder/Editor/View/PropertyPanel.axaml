@@ -8,7 +8,7 @@
                 <!--Этот грид отвечает за правую панель свойств-->
             <Grid Name="PropPanel">
 
-                <TabControl TabStripPlacement="Top" Width="270" Background="#d2e9f8">
+                <TabControl TabStripPlacement="Top" Width="270" Background="#2c3038">
                     <!-- Тут короче панель свойств -->
                     <TabItem Name="Edit" Header="Свойства" FontSize="20">
                         <StackPanel Margin="5">

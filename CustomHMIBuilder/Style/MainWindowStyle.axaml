@@ -9,21 +9,25 @@
                 <Setter Property="FontSize" Value="12"/>
         </Style>
         
-        <Style Selector="Grid#Header">
+        <Style Selector="Border.Headerbtn">
                 <Setter Property="Background" Value="#8a80ff"/>
+                <Setter Property="Padding" Value="10"/>
+                <Setter Property="CornerRadius" Value="5"/>
+        </Style>
+        <Style Selector="Grid#Header1">
+                <Setter Property="Background" Value="#2c3038"/>
                 <Setter Property="Height" Value="40"/>
         </Style>
         
         <Style Selector="Button#ConnectDevice">
                 <Setter Property="HorizontalAlignment"  Value="Right"/>
-                <Setter Property="Content" Value="Подключить устройство" />
                 <Setter Property="FontWeight" Value="Medium"/>
                 <Setter Property="Margin" Value="5"/>
         </Style>
         
         <!-- Стили отвечающие за середину главной страницы -->
         <Style Selector="Grid#MainGrid">
-                <Setter Property="Background" Value="#34495e"/>
+                <Setter Property="Background" Value="#474a52"/>
         </Style>
         
         <Style Selector="Button.Accent">
@@ -33,12 +37,11 @@
         
         <!-- Стили отвечающие за футтер -->
         <Style Selector="Grid#Zad">
-                <Setter Property="Height" Value="40"/>
-                <Setter Property="Background" Value="LightSteelBlue"/>
+                <Setter Property="Height" Value="60"/>
+                <Setter Property="Background" Value="#2c3038"/>
         </Style>
         
         <Style Selector="Button#WidgetsSettings">
-                <Setter Property="Content" Value="Настроить окно"/>
                 <Setter Property="Margin" Value="5,0,0,0"/> 
         </Style>
 </Styles>

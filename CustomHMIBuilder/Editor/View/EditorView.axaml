@@ -3,10 +3,8 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:view="clr-namespace:CustomHMIBuilder.Editor.View"
-             xmlns:viewModel="clr-namespace:CustomHMIBuilder.Editor.ViewModel"
              mc:Ignorable="d" d:DesignWidth="1200" d:DesignHeight="720"
-             x:Class="CustomHMIBuilder.Editor.View.EditorView"
-             x:DataType="viewModel:EditorVM">
+             x:Class="CustomHMIBuilder.Editor.View.EditorView">
 
     <!--Это основной Grid который задает кол-во строчек-->
     <Grid RowDefinitions="*,Auto" >

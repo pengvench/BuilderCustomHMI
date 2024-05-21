@@ -2,11 +2,14 @@
 using System.Threading;
 using System.Threading.Tasks;
 using Avalonia;
+using Avalonia.Controls;
 using Avalonia.Controls.ApplicationLifetimes;
 using Avalonia.Markup.Xaml;
 using CustomHMIBuilder.MainWindows.Views;
 using CustomHMIBuilder.SplashScreen.View;
 using CustomHMIBuilder.SplashScreen.ViewModel;
+
+
 
 namespace CustomHMIBuilder;
 
@@ -26,7 +29,6 @@ public class App : Application
 
             splashWindow.DataContext = splashViewModel;
             desktop.MainWindow = splashWindow;
-            
 
             var loadingMessages = new List<string>
             {
@@ -46,9 +48,11 @@ public class App : Application
                     {
                         splashViewModel.StartUpMessage = $"{message}{'.'.ToString().PadRight(i + 1, '.')}";
                         splashViewModel.ProgressValue += progressStep;
-                        await Task.Delay(500, cancellationToken: splashViewModel.CancellationToken); 
+                        await Task.Delay(300, cancellationToken: splashViewModel.CancellationToken); 
+
                     }
                 }
+                splashViewModel.ProgressValue = 100;
             }
             catch (TaskCanceledException)
             {
@@ -62,6 +66,7 @@ public class App : Application
             desktop.MainWindow = mainWindow;
             mainWindow.Show();
             splashWindow.Close();
+            desktop.ShutdownMode = ShutdownMode.OnMainWindowClose;
         }
 
         base.OnFrameworkInitializationCompleted();

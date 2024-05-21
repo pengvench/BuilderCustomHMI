@@ -57,6 +57,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Folder Include="Editor\ViewModel\" />
     <Folder Include="MainWindows\" />
   </ItemGroup>
 

@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Diagnostics;
+using Avalonia;
 using Avalonia.Controls;
 using Avalonia.Interactivity;
 using Avalonia.Markup.Xaml;
@@ -58,6 +60,12 @@ public partial class MainWindow : Window
     {
         _deviceConnectionWindow = null;
     }
-    
+
+
+    private void WebSite_OnClick(object? sender, RoutedEventArgs e)
+    {
+        string url = "https://mechatronica-pro.com/ru";
+        Process.Start(new ProcessStartInfo { FileName = url, UseShellExecute = true });
+    }
 }
     
