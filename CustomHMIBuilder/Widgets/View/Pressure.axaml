@@ -4,7 +4,7 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:lvc="using:LiveChartsCore.SkiaSharpView.Avalonia"
              xmlns:viewModels="clr-namespace:CustomHMIBuilder.Widgets.ViewModels"
-             MaxHeight="500" MaxWidth="700"
+             MaxHeight="350" MaxWidth="500"
              mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
              x:Class="CustomHMIBuilder.Widgets.Pressure"
              x:DataType="viewModels:BasicWidgetsViewModel">
@@ -13,26 +13,48 @@
         <viewModels:BasicWidgetsViewModel/>
     </UserControl.DataContext>
             
-    <Border CornerRadius="25" Background="White"> 
-        <Grid ColumnDefinitions="*, Auto">
-        <lvc:PieChart
-            Grid.Column="0"
-            Title="{Binding PressureLabel}"
-            Series="{Binding PressureSeries}"
-            VisualElements="{Binding PressureVisualElements}"
-            InitialRotation="-225"
-            MaxAngle="270"
-            MinValue="0"
-            MaxValue="100">
-
-        </lvc:PieChart>
+    <Border CornerRadius="25" Background="#2c3038" >
+        
+        <Grid RowDefinitions="Auto,*" Margin="15">
+        
+            <Grid Grid.Row="0" ColumnDefinitions="*,Auto,Auto" HorizontalAlignment="Center">
+                <TextBlock Grid.Column="0" FontWeight="Bold" FontSize="25" VerticalAlignment="Center" Foreground="WhiteSmoke" Text="Давление в системе"/> 
+                <Button Grid.Column="1" Margin="80,0,0,0" Width="50" Background="Transparent">
+                    <Image Source="../../Assets/lock.png"/>
+                </Button>
+                <Button Grid.Column="2" Width="50" Background="Transparent">
+                    <Image Source="../../Assets/cross-circle.png"/>
+                </Button>            
+            </Grid>
+        
+        <Grid Grid.Row="1" ColumnDefinitions="*, Auto" >
+           
+                <lvc:PieChart
+                    Grid.Column="0" 
+                    Margin="0,0,0,-40"
+                    Series="{Binding PressureSeries}"
+                    VisualElements="{Binding PressureVisualElements}"
+                    InitialRotation="-225"
+                    MaxAngle="270"
+                    MinValue="0"
+                    MaxValue="100">
+                    
+                </lvc:PieChart>
+      
+                
+        
             
             <StackPanel Grid.Column="1" Spacing="20"  VerticalAlignment="Center" Margin="20">
-                <Button  Width="140" FontSize="25" Content="Повысить"/>
-                <Button Width="140" FontSize="25" Content="Понизить"/>
+                <Button  Width="60" Background="WhiteSmoke" CornerRadius="20" >
+                    <Image Source="../../Assets/caret-circle-up.png" />
+                </Button>
+                <Button Width="60" Background="WhiteSmoke" CornerRadius="20">
+                    <Image Source="../../Assets/caret-circle-down.png"/>
+                </Button>
             </StackPanel>
+            
         </Grid>
-       
+        </Grid>
         
     </Border> 
     

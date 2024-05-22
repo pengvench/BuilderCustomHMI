@@ -4,25 +4,27 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d" 
              x:Class="CustomHMIBuilder.Widgets.WidgetsList">
-       <!--Этот грид отвечает за левую панель списка элементов-->
+    
+    
+    <!--Этот грид отвечает за левую панель списка элементов-->
     <Grid Name="NavPanel">
-
+        <Border BorderThickness="5" Background="#2c3038" CornerRadius="20" BorderBrush="#474a52">
         <!--Содержимое левого меню-->
 
-        <TabControl Background="#d2e9f8" TabStripPlacement="Top" Width="300">
-            <TabItem Header="Виджеты">
+        <TabControl   TabStripPlacement="Top" Width="300">
+            <TabItem Header="Виджеты" Foreground="WhiteSmoke">
                 <ScrollViewer>
                     <TreeView FontSize="15">
                         <TreeViewItem Header="Стандартные виджеты" IsExpanded="True" Background="LightSeaGreen"  CornerRadius="5">
-                            <Button Content="Температурный График" Name="TemperatureGraph" Background="Transparent"/>
-                            <Button Content="Управления Температурой" Name="TemperatureControl" Background="Transparent"/>
-                            <Button Content="Энергопотребление" Name="PowerConsumption" Background="Transparent"/>
-                            <Button Content="Обороты Двигателя" Name="EngineRpm" Background="Transparent"/>
-                            <Button Content="Состояние Системы" Name="SystemStatus" Background="Transparent"/>
-                            <Button Content="Давление в Системе" Name="PressureGauge" Background="Transparent"/>
+                            <Button Foreground="WhiteSmoke" Content="Температурный График" Name="TemperatureGraph" Background="Transparent"/>
+                            <Button Foreground="WhiteSmoke" Content="Управления Температурой" Name="TemperatureControl" Background="Transparent"/>
+                            <Button Foreground="WhiteSmoke" Content="Энергопотребление" Name="PowerConsumption" Background="Transparent"/>
+                            <Button Foreground="WhiteSmoke" Content="Обороты Двигателя" Name="EngineRpm" Background="Transparent"/>
+                            <Button Foreground="WhiteSmoke" Content="Состояние Системы" Name="SystemStatus" Background="Transparent"/>
+                            <Button Foreground="WhiteSmoke" Content="Давление в Системе" Name="PressureGauge" Background="Transparent"/>
                         </TreeViewItem>
                         
-                        <TreeViewItem Header="Ваши виджеты" Background="LightSeaGreen" CornerRadius="5">
+                        <TreeViewItem Header="Пользовательские виджеты" Background="LightSeaGreen" CornerRadius="5">
                             
                         </TreeViewItem>
                         
@@ -30,5 +32,7 @@
                 </ScrollViewer>
             </TabItem>
         </TabControl>
+    </Border>
     </Grid>
+    
 </UserControl>

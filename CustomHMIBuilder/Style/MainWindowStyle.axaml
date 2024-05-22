@@ -44,4 +44,13 @@
         <Style Selector="Button#WidgetsSettings">
                 <Setter Property="Margin" Value="5,0,0,0"/> 
         </Style>
+        
+        
+        <Style Selector="Button.HMIControlsBtn">
+                <Setter Property="HorizontalAlignment"  Value="Center"/>
+                <Setter Property="Width"  Value="200"/>
+                <Setter Property="HorizontalContentAlignment"  Value="Center"/>
+                <Setter Property="Foreground"  Value="WhiteSmoke"/>
+                <Setter Property="FontSize"  Value="15"/>
+        </Style>
 </Styles>

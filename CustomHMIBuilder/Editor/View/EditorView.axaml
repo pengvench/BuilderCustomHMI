@@ -11,8 +11,7 @@
         
         <Grid Grid.Row="0" ColumnDefinitions="Auto,Auto,*,Auto,Auto">
             
-            <Button Grid.Column="0" Classes="Accent" Height="400" VerticalContentAlignment="Center" />
-            
+
             <!--Этот грид отвечает за левую панель списка элементов-->
             <Grid Grid.Column="1" Name="ControlsPanel" >
                 <view:ControlsMenu />
@@ -30,16 +29,25 @@
                 <view:PropertyPanel/>
             </Grid>
             
-            <Button Grid.Column="4" Classes="Accent" Height="400" VerticalContentAlignment="Center" />
+            
         </Grid>
 
         <!-- Задница -->
         <Grid Grid.Row="1" Name="Zad" ColumnDefinitions="*,Auto,*,Auto,*">
 
-            <Button Grid.Column="1" Margin="5,0,0,0" Classes="Accent"
-                    Content="Собрать пульт" />
+            <Button Grid.Column="1"  Classes="Accent">
+                <StackPanel Spacing="10" Orientation="Horizontal">
+                    <Image Width="20" Source="../../Assets/file-export.png"/>
+                    <TextBlock FontWeight="Bold" FontSize="20" Text="Собрать пульт"/>
+                </StackPanel>
+            </Button>
             <Button Grid.Column="3" Classes="Accent"
-                    HorizontalAlignment="Right" Content="Сброс" />
+                    HorizontalAlignment="Right" >
+                <StackPanel Orientation="Horizontal" Spacing="10">
+                    <Image Width="20" Source="../../Assets/refresh.png"/>
+                    <TextBlock FontWeight="Bold" FontSize="20" Text="Сбросить" />
+                </StackPanel>
+            </Button>
         </Grid>
     </Grid>
 

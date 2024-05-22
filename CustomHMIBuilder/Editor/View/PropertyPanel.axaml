@@ -6,46 +6,47 @@
              x:Class="CustomHMIBuilder.Editor.View.PropertyPanel">
     
                 <!--Этот грид отвечает за правую панель свойств-->
+                <Border BorderThickness="5" BorderBrush="#474a52" Background="#2c3038" CornerRadius="20">
             <Grid Name="PropPanel">
 
-                <TabControl TabStripPlacement="Top" Width="270" Background="#2c3038">
+                <TabControl TabStripPlacement="Top" Width="270" >
                     <!-- Тут короче панель свойств -->
-                    <TabItem Name="Edit" Header="Свойства" FontSize="20">
+                    <TabItem Foreground="WhiteSmoke" Name="Edit" Header="Свойства" FontSize="20">
                         <StackPanel Margin="5">
                             <!-- Это короче грид с именем -->
-                            <Grid>
-                                <Label Grid.Column="0" FontSize="20" Content="Name - " VerticalAlignment="Center" />
+                            <Grid ColumnDefinitions="Auto,*">
+                                <Label Foreground="WhiteSmoke" Grid.Column="0" FontSize="20" Content="Name - " VerticalAlignment="Center" />
                                 <TextBox Grid.Column="1" Name="TxtName" />
                             </Grid>
                             <!-- Тут короче значения позиции, ровно выровненные на минуточку -->
                             <Grid HorizontalAlignment="Center" Margin="0,10,0,0" ColumnDefinitions="20,*,20,*">
                                 <Label Grid.Column="0" Content="X" HorizontalContentAlignment="Center"
-                                       VerticalContentAlignment="Center" />
+                                       Foreground="WhiteSmoke"  VerticalContentAlignment="Center" />
                                 <NumericUpDown Grid.Column="1" Name="NumX" ShowButtonSpinner="False" AllowSpin="True" />
                                 <Label Grid.Column="2" Content="Y" HorizontalContentAlignment="Center"
-                                       VerticalContentAlignment="Center" />
+                                       Foreground="WhiteSmoke"  VerticalContentAlignment="Center" />
                                 <NumericUpDown Grid.Column="3" Name="NumY" ShowButtonSpinner="False" AllowSpin="True" />
                             </Grid>
                             <!-- тут короче значения ширины, синхронны верхнему блоку, на минуточку -->
                             <Grid Margin="0,10,0,0" HorizontalAlignment="Center" ColumnDefinitions="20,*,20,*">
                                 <Label Grid.Column="0" Content="W" HorizontalContentAlignment="Center"
-                                       VerticalContentAlignment="Center" />
+                                       Foreground="WhiteSmoke"  VerticalContentAlignment="Center" />
                                 <NumericUpDown Grid.Column="1" Name="NumW" ShowButtonSpinner="False" AllowSpin="True" />
                                 <Label Grid.Column="2" Content="H" HorizontalContentAlignment="Center"
-                                       VerticalContentAlignment="Center" />
+                                       Foreground="WhiteSmoke" VerticalContentAlignment="Center" />
                                 <NumericUpDown Grid.Column="3" Name="NumH" ShowButtonSpinner="False" AllowSpin="True" />
                             </Grid>
                             
                             <!-- Кнопка принятия ислама -->
-                            <Button Content="Применить" HorizontalAlignment="Center" Margin="0 10 0 0" />
+                            <Button Classes="Accent" Content="Применить" HorizontalAlignment="Center" Margin="0 10 0 0" />
 
                         </StackPanel>
                     </TabItem>
 
-                    <TabItem Name="Export" Header="Экспорт" FontSize="20" />
+                    <TabItem Foreground="WhiteSmoke" Name="Export" Header="Экспорт" FontSize="20" />
 
                 </TabControl>
             </Grid>
-                
+                </Border>
     
 </UserControl>

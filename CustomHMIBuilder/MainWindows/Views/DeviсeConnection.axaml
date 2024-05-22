@@ -4,11 +4,11 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         mc:Ignorable="d"
         Width="500"
+        Height="553"
         x:Class="CustomHMIBuilder.MainWindows.Views.DeviсeConnection"
         WindowStartupLocation="CenterScreen"
         CanResize="False"
         SystemDecorations="None"
-        Topmost="True"
         Background="Transparent"
         TransparencyLevelHint="Transparent"
         TransparencyBackgroundFallback="Transparent"
@@ -16,66 +16,74 @@
 
     <Border CornerRadius="5" Background="White">
 
-        <Grid RowDefinitions="Auto,*,*,Auto">
+        <Grid  RowDefinitions="Auto,Auto,Auto">
             <Grid  Grid.Row="0">
                 <StackPanel   Spacing="10" HorizontalAlignment="Center" Margin="10">
                     <StackPanel Orientation="Horizontal" Spacing="10">
-                        <Label Content="Устройство" VerticalAlignment="Center" />
+                        <Label FontWeight="Bold" Content="Устройство" VerticalAlignment="Center" />
                         <ComboBox Width="150" />
-                        <Button Content="+" />
-                        <Button Content="del" />
-                        <Button Content="ref" />
+                        <Button Background="Transparent" >
+                            <Image  Width="20" Source="../../Assets/add.png"/>
+                        </Button>
+                        <Button Background="Transparent" >
+                            <Image  Width="20" Source="../../Assets/trash.png"/>
+                        </Button>
+                        <Button Background="Transparent" >
+                            <Image  Width="20" Source="../../Assets/refresh1.png"/>
+                        </Button>
                     </StackPanel>
 
                     <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Spacing="10">
-                        <Label Content="Интерфейс" VerticalAlignment="Center" />
-                        <ComboBox />
+                        <Label FontWeight="Bold" Content="Интерфейс" VerticalAlignment="Center" />
+                        <ComboBox Width="100" FontSize="15" />
 
-                        <Label Content="ID" VerticalAlignment="Center" />
-                        <NumericUpDown AllowSpin="True" ShowButtonSpinner="False" />
-                        <Button Content="view" />
+                        <Label FontWeight="Bold" Content="ID" VerticalAlignment="Center" />
+                        <NumericUpDown Width="100" FontSize="15" AllowSpin="True" ShowButtonSpinner="False" />
+                        <Button Background="Transparent" >
+                            <Image  Width="20" Source="../../Assets/eye.png"/>
+                        </Button>
                     </StackPanel>
                 </StackPanel>
             </Grid>
-            <Grid Name="MainGrid" Grid.Row="1" >
+            <Grid Background="#474a52" Grid.Row="1" >
 
-                <StackPanel Spacing="10" HorizontalAlignment="Center" Margin="10">
-                    <Border BorderThickness="2" BorderBrush="White" CornerRadius="5">
-                        <StackPanel Spacing="5" Margin="5">
-                            <Label Content="Настройка COM-порта" />
+                <Grid RowDefinitions="Auto,Auto" HorizontalAlignment="Center" Margin="10">
+                    <Border Grid.Row="0" BorderThickness="2" Margin="10" BorderBrush="White" CornerRadius="5">
+                        <StackPanel Spacing="5"  Margin="15">
+                            <Label FontWeight="Bold" Foreground="WhiteSmoke" Content="Настройка COM-порта" />
                             <Grid ColumnDefinitions="120,*">
-                                <Label Grid.Column="0" Content="Имя порта" />
+                                <Label Grid.Column="0" Foreground="WhiteSmoke" Content="Имя порта" />
+                                <ComboBox Width="150"  Grid.Column="1" />
+                            </Grid>
+                            <Grid ColumnDefinitions="120,*">
+                                <Label Grid.Column="0" Foreground="WhiteSmoke" Content="Скорость,baud" />
                                 <ComboBox Width="150" Grid.Column="1" />
                             </Grid>
                             <Grid ColumnDefinitions="120,*">
-                                <Label Grid.Column="0" Content="Скорость,baud" />
+                                <Label Grid.Column="0" Foreground="WhiteSmoke" Content="Бит чётности" />
                                 <ComboBox Width="150" Grid.Column="1" />
                             </Grid>
                             <Grid ColumnDefinitions="120,*">
-                                <Label Grid.Column="0" Content="Бит чётности" />
-                                <ComboBox Width="150" Grid.Column="1" />
-                            </Grid>
-                            <Grid ColumnDefinitions="120,*">
-                                <Label Grid.Column="0" Content="Стоповые биты" />
+                                <Label Grid.Column="0" Foreground="WhiteSmoke" Content="Стоповые биты" />
                                 <ComboBox Width="150" Grid.Column="1" />
                             </Grid>
                         </StackPanel>
                     </Border>
 
-                    <Border BorderThickness="2" BorderBrush="White" CornerRadius="5">
-                        <StackPanel Spacing="5" Margin="5">
-                            <Label  Content="Настройки чтения параметров" />
+                    <Border Grid.Row="1" BorderThickness="2" Margin="10" BorderBrush="White" CornerRadius="5">
+                        <StackPanel Spacing="5" Margin="15">
+                            <Label  Foreground="WhiteSmoke" FontWeight="Bold" Content="Настройки чтения параметров" />
                             <Grid ColumnDefinitions="230,*">
-                                <Label Grid.Column="0" Content="Пауза между запросами, мс" />
+                                <Label Grid.Column="0" Foreground="WhiteSmoke" Content="Пауза между запросами, мс" />
                                 <NumericUpDown Grid.Column="1" ShowButtonSpinner="False" AllowSpin="True" />
                             </Grid>
                             <Grid ColumnDefinitions="230,*">
-                                <Label Grid.Column="0" Content="Количество считываемых байт" />
+                                <Label Grid.Column="0" Foreground="WhiteSmoke" Content="Количество считываемых байт" />
                                 <NumericUpDown Grid.Column="1" ShowButtonSpinner="False" AllowSpin="True" />
                             </Grid>
                         </StackPanel>
                     </Border>
-                </StackPanel>
+                </Grid>
 
             </Grid>
 

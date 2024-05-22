@@ -27,15 +27,7 @@ public class BasicWidgetsViewModel : ReactiveObject
             GeometryStroke = new SolidColorPaint(new SKColor(86, 184, 156)) { StrokeThickness = 4 },
         }
     };
-
-    public LabelVisual TempgraphLabel { get; set; } =
-        new()
-        {
-            Text = "Температурный график",
-            TextSize = 25,
-            Padding = new LiveChartsCore.Drawing.Padding(15),
-            Paint = new SolidColorPaint(SKColors.DarkSlateGray)
-        };
+    
     
     // Это отвечает за виджет управления температуры
     
@@ -45,7 +37,7 @@ public class BasicWidgetsViewModel : ReactiveObject
             {
                 series.Fill = new SolidColorPaint(new SKColor(86, 184, 156));
                 series.DataLabelsSize = 50;
-                series.DataLabelsPaint = new SolidColorPaint(SKColors.Black);
+                series.DataLabelsPaint = new SolidColorPaint(SKColors.WhiteSmoke);
                 series.DataLabelsPosition = PolarLabelsPosition.ChartCenter;
                 series.InnerRadius = 60;
             }),
@@ -53,16 +45,9 @@ public class BasicWidgetsViewModel : ReactiveObject
             {
                 series.InnerRadius = 60;
                 series.Fill = new SolidColorPaint(new SKColor(100, 181, 246, 90));
-            }));
+            })
+            );
     
-    public LabelVisual TempControlLabel { get; set; } =
-        new()
-        {
-            Text = "Управление температурой",
-            TextSize = 25,
-            Padding = new LiveChartsCore.Drawing.Padding(15),
-            Paint = new SolidColorPaint(SKColors.DarkSlateGray)
-        };
     
     // Это отвечает за давление в системе
     
@@ -73,7 +58,8 @@ public class BasicWidgetsViewModel : ReactiveObject
         
         Needle = new NeedleVisual
         {
-            Value = 45
+            Value = 45,
+            Fill = new SolidColorPaint(SKColors.WhiteSmoke)
         };
         
         PressureSeries = GaugeGenerator.BuildAngularGaugeSections(
@@ -88,7 +74,9 @@ public class BasicWidgetsViewModel : ReactiveObject
                 LabelsSize = 16,
                 LabelsOuterOffset = 15,
                 OuterOffset = 65,
-                TicksLength = 20
+                TicksLength = 20,
+                Stroke = new SolidColorPaint(SKColors.WhiteSmoke),
+                LabelsPaint = new SolidColorPaint(SKColors.WhiteSmoke)
             },
             Needle
         };
@@ -106,14 +94,5 @@ public class BasicWidgetsViewModel : ReactiveObject
         series.OuterRadiusOffset = sectionsOuter;
         series.MaxRadialColumnWidth = sectionsWidth;
     }
-    
-    public LabelVisual PressureLabel { get; set; } =
-        new()
-        {
-            Text = "Давление в системе",
-            TextSize = 25,
-            Padding = new LiveChartsCore.Drawing.Padding(15),
-            Paint = new SolidColorPaint(SKColors.DarkSlateGray)
-        };
     
 }

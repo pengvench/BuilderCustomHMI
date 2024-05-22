@@ -6,38 +6,29 @@
              mc:Ignorable="d"
              x:Class="CustomHMIBuilder.Editor.View.ControlsMenu"
              x:DataType="view:ControlsMenu">
-
+    <Border BorderThickness="5" BorderBrush="#474a52" Background="#2c3038" CornerRadius="20">
     <!--Этот грид отвечает за левую панель списка элементов-->
     <Grid Name="NavPanel">
 
         <!--Содержимое левого меню-->
 
-        <TabControl Background="#2c3038" TabStripPlacement="Top" Width="270">
-            <TabItem Header="Компоненты">
+        <TabControl  TabStripPlacement="Top" Width="270">
+            <TabItem Foreground="WhiteSmoke" Header="Компоненты">
                 <ScrollViewer FlowDirection="RightToLeft" VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Disabled">
                     <ItemsControl >
-                        <Button HorizontalAlignment="Center" Name="BtnLabel" Width="200"
-                                HorizontalContentAlignment="Center" FontSize="15" Content="Label" />
-                        <Button HorizontalAlignment="Center" Name="BtnButton" Width="200"
-                                HorizontalContentAlignment="Center" FontSize="15" Content="Button" />
-                        <Button HorizontalAlignment="Center" Name="BtnIndicator" Width="200"
-                                HorizontalContentAlignment="Center" FontSize="15" Content="Indicator" />
-                        <Button HorizontalAlignment="Center" Name="BtnTrend" Width="200"
-                                HorizontalContentAlignment="Center" FontSize="15" Content="Trend" />
-                        <Button HorizontalAlignment="Center" Name="BtnTextBox" Width="200"
-                                HorizontalContentAlignment="Center" FontSize="15" Content="Text Box" />
-                        <Button HorizontalAlignment="Center" Name="BtnSlider" Width="200"
-                                HorizontalContentAlignment="Center" FontSize="15" Content="Slider" />
-                        <Button HorizontalAlignment="Center" Name="BtnDropdownList" Width="200"
-                                HorizontalContentAlignment="Center" FontSize="15" Content="Dropdown list" />
-                        <Button HorizontalAlignment="Center" Name="BtnNumeric" Width="200"
-                                HorizontalContentAlignment="Center" FontSize="15" Content="Numeric UP Down" />
-                        <Button HorizontalAlignment="Center" Name="BtnComboBox" Width="200"
-                                HorizontalContentAlignment="Center" FontSize="15" Content="Combo Box" />
+                        <Button Classes="HMIControlsBtn"  Name="BtnLabel" Content="Label" />
+                        <Button Classes="HMIControlsBtn"  Name="BtnButton" Content="Button" />
+                        <Button Classes="HMIControlsBtn"  Name="BtnIndicator" Content="Indicator" />
+                        <Button Classes="HMIControlsBtn"  Name="BtnTrend" Content="Trend" />
+                        <Button Classes="HMIControlsBtn"  Name="BtnTextBox"  Content="Text Box" />
+                        <Button Classes="HMIControlsBtn"  Name="BtnSlider" Content="Slider" />
+                        <Button Classes="HMIControlsBtn"  Name="BtnDropdownList" Content="Dropdown list" />
+                        <Button Classes="HMIControlsBtn"  Name="BtnNumeric" Width="200" Content="Numeric UP Down" />
+                        <Button Classes="HMIControlsBtn"  Name="BtnComboBox" Width="200" Content="Combo Box" />
                     </ItemsControl>
                 </ScrollViewer>
             </TabItem>
         </TabControl>
     </Grid>
-
+</Border>
 </UserControl>

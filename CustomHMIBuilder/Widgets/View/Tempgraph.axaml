@@ -13,15 +13,30 @@
         <viewModels:BasicWidgetsViewModel/>
     </UserControl.DataContext>
    
-    <Border CornerRadius="25" Background="White"> 
+    <Border CornerRadius="25"  Background="#2c3038"> 
         
-        <lvc:CartesianChart 
-            MinWidth="300" MinHeight="250"
-                Title="{Binding TempgraphLabel}"
+        
+        <Grid RowDefinitions="Auto,*" Margin="15">
+        
+            <Grid Grid.Row="0" ColumnDefinitions="*,Auto,Auto" HorizontalAlignment="Center">
+                <TextBlock Grid.Column="0" FontWeight="Bold" FontSize="25" VerticalAlignment="Center" Foreground="WhiteSmoke" Text="Температурный график"/> 
+                <Button Grid.Column="1" Margin="80,0,0,0" Width="50" Background="Transparent">
+                    <Image Source="../../Assets/lock.png"/>
+                </Button>
+                <Button Grid.Column="2" Width="50" Background="Transparent">
+                    <Image Source="../../Assets/cross-circle.png"/>
+                </Button>            
+            </Grid>
+        
+        <lvc:CartesianChart
+            Grid.Row="1" 
+                MinWidth="300" MinHeight="250"
                 Series="{Binding TempgraphSeries}"
                 ZoomMode="X">
         </lvc:CartesianChart>
-        
+            
+        </Grid>
+            
     </Border>
     
 </UserControl>

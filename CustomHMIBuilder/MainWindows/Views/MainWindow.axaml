@@ -46,7 +46,7 @@
         </DockPanel>
 
         <!-- Первый хедер, где находюца панели "Конструктор" и "Пульт"-->
-        <Border BorderThickness="1" BorderBrush="#474a52" Grid.Row="1">
+        <Border BorderThickness="2" BorderBrush="#474a52" Grid.Row="1">
             <Grid Name="Header1" ColumnDefinitions="Auto,Auto,Auto,*,Auto">
                 <!--панель левых кнопок-->
                 <Border Grid.Column="0" Background="#2ecc71">
@@ -54,7 +54,7 @@
                         <TextBlock FontWeight="Bold" Text="CustomHMIBuilder" />
                     </Button>
                 </Border>
-                <Border Width="120" HorizontalAlignment="Right" Grid.Column="3" BorderThickness="1" BorderBrush="#474a52">
+                <Border Width="120" HorizontalAlignment="Right" Grid.Column="3" BorderThickness="2,0,1,0" BorderBrush="#474a52">
                     <Button  Name="ConnectDevice" Background="Transparent" Click="ConnectDevice_OnClick">
                         <StackPanel Orientation="Horizontal">
                             <Image Source="../../Assets/settings-sliders.png" Width="15" />
@@ -62,7 +62,7 @@
                         </StackPanel>
                     </Button>
                 </Border>
-                <Border Grid.Column="4" BorderThickness="1" BorderBrush="#474a52">
+                <Border Grid.Column="4" BorderThickness="1,0,0,0" BorderBrush="#474a52">
                     <Button Margin="5,0,5,0" Background="Transparent" Name="Help">
                         <StackPanel Orientation="Horizontal">
                             <Image Source="../../Assets/info.png" Width="15" />

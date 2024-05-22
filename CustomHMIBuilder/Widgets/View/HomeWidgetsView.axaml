@@ -19,7 +19,7 @@
                 <Grid Grid.Column="1">  
                       <!--Поле будующего пульта-->
                         
-                        <widgets:Pressure/>
+                        <widgets:TempControl/>
                 </Grid>
                 
             </Grid>
