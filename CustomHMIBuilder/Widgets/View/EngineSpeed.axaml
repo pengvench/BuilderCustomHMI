@@ -1,0 +1,66 @@
+﻿<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:lvc="using:LiveChartsCore.SkiaSharpView.Avalonia"
+             xmlns:viewModels="clr-namespace:CustomHMIBuilder.Widgets.ViewModels"
+             MaxHeight="350" MaxWidth="500"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             x:Class="CustomHMIBuilder.Widgets.EngineSpeed"
+             x:DataType="viewModels:BasicWidgetsViewModel">
+    
+    <UserControl.DataContext>
+        <viewModels:BasicWidgetsViewModel/>
+    </UserControl.DataContext>
+            
+    <Border CornerRadius="25" Background="#2c3038" >
+        
+        <Grid RowDefinitions="Auto,*" Margin="15">
+        
+            <Grid Grid.Row="0" ColumnDefinitions="*,Auto,Auto" HorizontalAlignment="Center">
+                <TextBlock Grid.Column="0" FontWeight="Bold" FontSize="25" VerticalAlignment="Center" Foreground="WhiteSmoke" Text="Обороты двигателя"/> 
+                <Button Grid.Column="1" Margin="80,0,0,0" Width="50" Background="Transparent">
+                    <Image Source="../../Assets/lock.png"/>
+                </Button>
+                <Button Grid.Column="2" Width="50" Background="Transparent">
+                    <Image Source="../../Assets/cross-circle.png"/>
+                </Button>            
+            </Grid>
+        
+        <Grid Grid.Row="1" ColumnDefinitions="Auto, Auto" >
+           
+            <Grid RowDefinitions="Auto,Auto" Grid.Column="0">
+                <lvc:PieChart
+                    Grid.Row="0" 
+                    Margin="0,0,0,-40"
+                    Height="300"
+                    Width="350"
+                    Series="{Binding EngineSeries}"
+                    VisualElements="{Binding EngineVisualElements}"
+                    InitialRotation="-225"
+                    MaxAngle="270"
+                    MinValue="0"
+                    MaxValue="8">
+                    
+                    
+                </lvc:PieChart>
+                <Label HorizontalAlignment="Center" Foreground="WhiteSmoke" Margin="0,-40,0,0" Grid.Row="1" Content="x1000r/min"/> 
+            </Grid>
+                
+        
+            
+            <StackPanel Grid.Column="1" Spacing="20"  VerticalAlignment="Center" Margin="20">
+                <Button  Width="60" Background="WhiteSmoke" CornerRadius="20" >
+                    <Image Source="../../Assets/caret-circle-up.png" />
+                </Button>
+                <Button Width="60" Background="WhiteSmoke" CornerRadius="20">
+                    <Image Source="../../Assets/caret-circle-down.png"/>
+                </Button>
+            </StackPanel>
+            
+        </Grid>
+        </Grid>
+        
+    </Border> 
+    
+</UserControl>

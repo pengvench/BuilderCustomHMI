@@ -53,4 +53,17 @@
                 <Setter Property="Foreground"  Value="WhiteSmoke"/>
                 <Setter Property="FontSize"  Value="15"/>
         </Style>
+        
+        <Style Selector="Border.HelpClose">
+                <Setter Property="Width" Value="350"/>
+
+                <Setter Property="Margin" Value="0,85,20,0"/>
+                <Setter Property="Background" Value="WhiteSmoke"/>
+                <Setter Property="CornerRadius" Value="15"/>
+                <Setter Property="ZIndex" Value="1"/>
+                <Setter Property="HorizontalAlignment" Value="Right"/>
+                <Setter Property="VerticalAlignment" Value="Top"/>
+        </Style>
+
+
 </Styles>

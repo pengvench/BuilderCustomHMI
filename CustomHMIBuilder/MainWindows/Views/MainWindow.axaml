@@ -33,14 +33,14 @@
                 </MenuItem>
                 <MenuItem Header="Edit" FontSize="12">
                     <Separator />
-                    <MenuItem Header="Copy" />
-                    <MenuItem Header="Paste" />
+                    <MenuItem Header="Copy" InputGesture="Ctrl+C" />
+                    <MenuItem Header="Paste" InputGesture="Ctrl+V" />
                     <Separator />
-                    <MenuItem Header="Cancel" />
+                    <MenuItem Header="Cancel" InputGesture="Ctrl+Z" />
                 </MenuItem>
-                <MenuItem Header="Help">
-                    <MenuItem Header="About" />
-                </MenuItem>
+                    <MenuItem Header="Help">
+                        <MenuItem Header="About" />
+                    </MenuItem>
             </Menu>
             <TextBlock />
         </DockPanel>
@@ -54,8 +54,9 @@
                         <TextBlock FontWeight="Bold" Text="CustomHMIBuilder" />
                     </Button>
                 </Border>
-                <Border Width="120" HorizontalAlignment="Right" Grid.Column="3" BorderThickness="2,0,1,0" BorderBrush="#474a52">
-                    <Button  Name="ConnectDevice" Background="Transparent" Click="ConnectDevice_OnClick">
+                <Border Width="120" HorizontalAlignment="Right" Grid.Column="3" BorderThickness="2,0,1,0"
+                        BorderBrush="#474a52">
+                    <Button Name="ConnectDevice" Background="Transparent" Click="ConnectDevice_OnClick">
                         <StackPanel Orientation="Horizontal">
                             <Image Source="../../Assets/settings-sliders.png" Width="15" />
                             <TextBlock Foreground="WhiteSmoke" Margin="5,0,0,0" Text="Настройки" />
@@ -63,7 +64,7 @@
                     </Button>
                 </Border>
                 <Border Grid.Column="4" BorderThickness="1,0,0,0" BorderBrush="#474a52">
-                    <Button Margin="5,0,5,0" Background="Transparent" Name="Help">
+                    <Button Click="ToggleVisibility_Click" Margin="5,0,5,0" Background="Transparent" Name="Help">
                         <StackPanel Orientation="Horizontal">
                             <Image Source="../../Assets/info.png" Width="15" />
                             <TextBlock Foreground="WhiteSmoke" Margin="5,0,0,0" Text="Справка" />
@@ -73,8 +74,41 @@
             </Grid>
         </Border>
 
+        <Border Name="HelpInfo" Grid.RowSpan="4"
+                Classes="HelpClose"
+                IsVisible="False">
+            <Grid RowDefinitions="Auto,Auto" Margin="10">
+                <Button Margin="0,0,0,10" HorizontalAlignment="Right" Click="Close_Click" Grid.Row="0" Width="40"
+                        Background="Transparent">
+                    <Image Source="../../Assets/cross-circle1.png" />
+                </Button>
+                <StackPanel HorizontalAlignment="Center" Spacing="10" Grid.Row="1">
+                    <Border Padding="10" Background="Gray" CornerRadius="5">
+                        <TextBlock TextAlignment="Center" Foreground="WhiteSmoke" FontSize="15" FontWeight="Bold">
+                            Размещение <LineBreak /> виджетов или элеменов управления
+                        </TextBlock>
+                    </Border>
+                    <Border Background="Black" Height="1" Width="200" />
+                    <TextBlock TextAlignment="Center">
+                        Для перемещения зажмите <LineBreak />левую кнопку мыши.
+                    </TextBlock>
+                    <Border Background="Black" Height="1" Width="200" />
+                    <TextBlock TextAlignment="Center">
+                        Для изменения размера<LineBreak /> зажмите правую кнопку мыши.
+                    </TextBlock>
+                    <Border Background="Black" Height="1" Width="200" />
+                    <TextBlock TextAlignment="Center">
+                        Сtr + C - для копирования <LineBreak />
+                        Сtr + V - для вставки <LineBreak />
+                    </TextBlock>
+                </StackPanel>
+            </Grid>
+        </Border>
+
+
         <!-- Второй хедер, где находюца панели "Конструктор" и "Пульт"-->
         <Grid Grid.Row="2" Name="Header" Height="60" Background="#2c3038" ColumnDefinitions="Auto,Auto,Auto,*,Auto">
+
             <!--панель левых кнопок-->
             <Button Grid.Column="0" Name="Home" Click="Button_OnClick" Background="Transparent" FontWeight="Medium"
                     Margin="5">
@@ -96,8 +130,10 @@
             </Button>
         </Grid>
 
+
         <!-- Это короче основная область, где будет спавниться окно -->
         <Grid Grid.Row="3" Name="MainGrid">
+
             <view:HomeWidgetsView />
         </Grid>
     </Grid>

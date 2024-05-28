@@ -80,11 +80,34 @@ public class BasicWidgetsViewModel : ReactiveObject
             },
             Needle
         };
+        
+        EngineSeries = GaugeGenerator.BuildAngularGaugeSections(
+            new GaugeItem(4, s => SetStyle(sectionsOuter, sectionsWidth,  s)),
+            new GaugeItem(3,  s => SetStyle(sectionsOuter, sectionsWidth, s)),
+            new GaugeItem(1, s => SetStyle(sectionsOuter, sectionsWidth, s)));
+
+        EngineVisualElements = new VisualElement<SkiaSharpDrawingContext>[]
+        {
+            new AngularTicksVisual
+            {
+                LabelsSize = 16,
+                LabelsOuterOffset = 15,
+                OuterOffset = 65,
+                TicksLength = 20,
+                Stroke = new SolidColorPaint(SKColors.WhiteSmoke),
+                LabelsPaint = new SolidColorPaint(SKColors.WhiteSmoke)
+            },
+            Needle
+        };
     }
 
     public IEnumerable<ISeries> PressureSeries { get; set; }
 
     public IEnumerable<VisualElement<SkiaSharpDrawingContext>> PressureVisualElements { get; set; }
+    
+    public IEnumerable<ISeries> EngineSeries { get; set; }
+
+    public IEnumerable<VisualElement<SkiaSharpDrawingContext>> EngineVisualElements { get; set; }
     
     public NeedleVisual Needle { get; set; }
 

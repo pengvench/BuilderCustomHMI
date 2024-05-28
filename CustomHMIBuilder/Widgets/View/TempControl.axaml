@@ -27,14 +27,16 @@
                 </Button>
             </Grid>
 
-            <Grid ColumnDefinitions="*, Auto" Grid.Row="1">
+            <Grid HorizontalAlignment="Center" ColumnDefinitions="*, Auto" Grid.Row="1">
+                <Viewbox  Grid.Column="0">
                 <lvc:PieChart
-                    Grid.Column="0" MinWidth="300" MinHeight="250"
+                    MinWidth="300" MinHeight="250"
                     Series="{Binding TempControlSeries}"
                     InitialRotation="-225"
                     MaxAngle="270"
                     MinValue="0"
                     MaxValue="100" />
+                </Viewbox>
 
                 <StackPanel Grid.Column="1" Spacing="20" VerticalAlignment="Center" Margin="20">
                     <Button Width="60" Background="WhiteSmoke" CornerRadius="20">

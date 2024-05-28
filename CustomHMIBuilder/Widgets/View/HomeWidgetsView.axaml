@@ -19,12 +19,12 @@
                 <Grid Grid.Column="1">  
                       <!--Поле будующего пульта-->
                         
-                        <widgets:TempControl/>
+                      <widgets:EngineSpeed/>
                 </Grid>
                 
             </Grid>
 
-            <!-- Задница -->
+            <!-- Это футтер -->
             <Grid Grid.Row="1" Name="Zad" ColumnDefinitions="*,Auto,*,Auto,*">
                 <Button Margin="10,0,0,0" Grid.Column="0" Classes="Accent" Click="WidgetsSettings_OnClick" Name="WidgetsSettings" >
                     <StackPanel Orientation="Horizontal">

@@ -1,6 +1,6 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <TargetFramework>net7.0</TargetFramework>
+    <TargetFramework>net8.0</TargetFramework>
     <Nullable>enable</Nullable>
     <LangVersion>latest</LangVersion>
     <AvaloniaUseCompiledBindingsByDefault>true</AvaloniaUseCompiledBindingsByDefault>
@@ -24,6 +24,8 @@
     <PackageReference Include="Avalonia.ReactiveUI" Version="11.1.0-beta2" />
     <!--Condition below is needed to remove Avalonia.Diagnostics package from build output in Release configuration.-->
     <PackageReference Condition="'$(Configuration)' == 'Debug'" Include="Avalonia.Diagnostics" Version="11.1.0-beta2" />
+    <PackageReference Include="CommunityToolkit.Mvvm" Version="8.2.2" />
+    <PackageReference Include="DotnetPackaging.Deb" Version="2.0.1" />
     <PackageReference Include="LiveChartsCore" Version="2.0.0-rc2" />
     <PackageReference Include="LiveChartsCore.SkiaSharpView" Version="2.0.0-rc2" />
     <PackageReference Include="LiveChartsCore.SkiaSharpView.Avalonia" Version="2.0.0-rc2" />
@@ -52,6 +54,10 @@
     </Compile>
     <Compile Update="Widgets\View\Pressure.axaml.cs">
       <DependentUpon>Pressure.axaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Widgets\View\EngineSpeed.axaml.cs">
+      <DependentUpon>EngineSpeed.axaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
   </ItemGroup>

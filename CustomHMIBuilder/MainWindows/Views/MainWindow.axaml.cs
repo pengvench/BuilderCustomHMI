@@ -2,8 +2,11 @@
 using System.Diagnostics;
 using Avalonia;
 using Avalonia.Controls;
+using Avalonia.Controls.Primitives;
+using Avalonia.Input;
 using Avalonia.Interactivity;
 using Avalonia.Markup.Xaml;
+using Avalonia.VisualTree;
 using CustomHMIBuilder.Editor.View;
 using CustomHMIBuilder.Widgets.View;
 
@@ -38,7 +41,8 @@ public partial class MainWindow : Window
                 break;
         }
     }
-
+    
+    // Окно подключения устройства
     private Window? _deviceConnectionWindow;
     
     private void ConnectDevice_OnClick(object? sender, RoutedEventArgs e)
@@ -61,11 +65,29 @@ public partial class MainWindow : Window
         _deviceConnectionWindow = null;
     }
 
-
+    //Кнопка ссылки на сайт
     private void WebSite_OnClick(object? sender, RoutedEventArgs e)
     {
         string url = "https://mechatronica-pro.com/ru";
         Process.Start(new ProcessStartInfo { FileName = url, UseShellExecute = true });
     }
+    
+    //Всплывающая справка
+    private void ToggleVisibility_Click(object sender, RoutedEventArgs e)
+    {
+        if (this.FindControl<Border>("HelpInfo") is Border border)
+        {
+            border.IsVisible = !border.IsVisible;
+        }
+    }
+
+    private void Close_Click(object sender, RoutedEventArgs e)
+    {
+        if (this.FindControl<Border>("HelpInfo") is Border border)
+        {
+            border.IsVisible = false; // Чтобы гарантированно скрыть элемент
+        }
+    }
+    
 }
     

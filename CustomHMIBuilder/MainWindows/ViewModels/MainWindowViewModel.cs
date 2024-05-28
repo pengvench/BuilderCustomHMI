@@ -1,10 +1,11 @@
-﻿using CustomHMIBuilder.ViewModels;
-
+﻿using CommunityToolkit.Mvvm.ComponentModel;
+using CommunityToolkit.Mvvm.Input;
 
 namespace CustomHMIBuilder.MainWindows.ViewModels;
 
-public class MainWindowViewModel : ViewModelBase
+public partial class MainWindowViewModel : ObservableObject
 {
-  
+    
+    
 }
 
